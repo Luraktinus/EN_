@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/Start.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://music/01_Dreamstate.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tiles.tres" type="TileSet" id=5]
+[ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 48
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = true
+font_data = ExtResource( 6 )
+
+[node name="Start" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 768, 71.2515 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = true
+stream_paused = false
+mix_target = 0
+bus = "Master"
+
+[node name="Goal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1566.46, -33.6391 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+mode = 0
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -196598, -536870912, 0, -196597, -536870912, 0, -196596, -536870912, 0, -196595, -536870912, 0, -196594, -536870912, 0, -196593, -536870912, 0, -196592, -536870912, 0, -196591, -536870912, 0, -196590, -536870912, 0, -196589, -536870912, 0, -196588, -536870912, 0, -196587, -536870912, 0, -196586, -536870912, 0, -196585, -536870912, 0, -196584, -536870912, 0, -196583, -536870912, 0, -131062, -536870912, 0, -131047, -536870912, 0, -65526, -536870912, 0, -65511, -536870912, 0, 10, -536870912, 0, 22, 536870917, 0, 23, 536870916, 0, 24, 536870912, 0, 25, -536870912, 0, 65546, -536870912, 0, 65557, 536870915, 0, 65558, 536870912, 0, 65559, 536870912, 0, 65560, 536870912, 0, 65561, -536870912, 0, 131082, -536870912, 0, 131091, 536870917, 0, 131092, 536870916, 0, 131093, 536870912, 0, 131094, 536870912, 0, 131095, 536870912, 0, 131096, 536870912, 0, 131097, -536870912, 0, 196618, -536870912, 0, 196619, -536870912, 0, 196620, -536870912, 0, 196621, -536870912, 0, 196622, -536870912, 0, 196623, -536870912, 0, 196624, -536870912, 0, 196625, -536870912, 0, 196626, -536870912, 0, 196627, -536870912, 0, 196628, -536870912, 0, 196629, -536870912, 0, 196630, -536870912, 0, 196631, -536870912, 0, 196632, -536870912, 0, 196633, -536870912, 0 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 848.0
+margin_top = -92.0
+margin_right = 1043.0
+margin_bottom = -25.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Start > "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+

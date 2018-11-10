@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://tiles/block.png" type="Texture" id=1]
+[ext_resource path="res://tiles/round1.png" type="Texture" id=2]
+[ext_resource path="res://tiles/round2.png" type="Texture" id=3]
+[ext_resource path="res://tiles/strong slope.png" type="Texture" id=4]
+[ext_resource path="res://tiles/weak slope1.png" type="Texture" id=5]
+[ext_resource path="res://tiles/weak slope2.png" type="Texture" id=6]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Block" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 64, 64 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Block"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Block/StaticBody2D"]
+build_mode = 0
+polygon = PoolVector2Array( -64, -64, -64, 64, 64, 64, 64, -64 )
+
+[node name="Round1" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 192, 64 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Round1"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round1/StaticBody2D"]
+build_mode = 0
+polygon = PoolVector2Array( -64, -64, -56, -24, -40, 8, -8, 40, 24, 56, 64, 64, -64, 64 )
+
+[node name="Round2" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 320, 64 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Round2"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round2/StaticBody2D"]
+build_mode = 0
+polygon = PoolVector2Array( -64, -64, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, -64, 64 )
+
+[node name="StrongSlope" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 64, 192 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StrongSlope"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StrongSlope/StaticBody2D"]
+build_mode = 0
+polygon = PoolVector2Array( -64, -64, -64, 64, 64, 64 )
+
+[node name="WeakSlope1" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 192, 192 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WeakSlope1"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WeakSlope1/StaticBody2D"]
+build_mode = 0
+polygon = PoolVector2Array( -64, -64, -64, 64, 64, 64, 64, 0 )
+
+[node name="WeakSlope2" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 320, 192 )
+texture = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WeakSlope2"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WeakSlope2/StaticBody2D"]
+build_mode = 0
+polygon = PoolVector2Array( -64, 0, -64, 64, 64, 64 )
+
