@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://bg.png" type="Texture" id=2]
+[ext_resource path="res://bttn_arrow.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -2576,6 +2577,21 @@ tracks/29/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 128, 128 )
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 128, 128 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+custom_solver_bias = 0.0
+extents = Vector2( 128, 128 )
+
 [node name="Player" type="KinematicBody2D"]
 input_pickable = false
 collision_layer = 1
@@ -2613,19 +2629,19 @@ limit_top = -10000000
 limit_right = 10000000
 limit_bottom = 10000000
 limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
 smoothing_enabled = false
-smoothing_speed = 5.0
+smoothing_speed = 0.0
 offset_v = 0.0
 offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
 editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="RayRight" type="RayCast2D" parent="."]
 scale = Vector2( 1, 24 )
@@ -2661,6 +2677,7 @@ anims/wall = SubResource( 9 )
 blend_times = [  ]
 
 [node name="Sprite" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spine" type="Polygon2D" parent="Sprite"]
 position = Vector2( -0.278748, -16.8324 )
@@ -2918,4 +2935,42 @@ rotation = -0.310567
 __meta__ = {
 "_edit_bone_": true
 }
+
+[node name="JUMP" type="TouchScreenButton" parent="."]
+position = Vector2( -1024, 320 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = SubResource( 10 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_accept"
+visibility_mode = 1
+
+[node name="LEFT" type="TouchScreenButton" parent="."]
+position = Vector2( 448, 576 )
+rotation = -1.5708
+normal = ExtResource( 3 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = SubResource( 11 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_left"
+visibility_mode = 1
+
+[node name="RIGHT" type="TouchScreenButton" parent="."]
+position = Vector2( 1027.33, 306.349 )
+rotation = 1.5708
+normal = ExtResource( 3 )
+pressed = ExtResource( 3 )
+bitmask = null
+shape = SubResource( 12 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "ui_right"
+visibility_mode = 1
 
