@@ -2594,7 +2594,7 @@ extents = Vector2( 128, 128 )
 
 [node name="Player" type="KinematicBody2D"]
 input_pickable = false
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 collision/safe_margin = 0.08
 motion/sync_to_physics = false
@@ -2644,7 +2644,6 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="RayRight" type="RayCast2D" parent="."]
-scale = Vector2( 1, 24 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 18, 0 )
@@ -2653,7 +2652,6 @@ collide_with_areas = true
 collide_with_bodies = true
 
 [node name="RayLeft" type="RayCast2D" parent="."]
-scale = Vector2( 1, 24 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( -18, 0 )

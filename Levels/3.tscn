@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 
-[node name="Level1" type="Node2D"]
+[node name="3" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -27,7 +28,14 @@ format = 1
 tile_data = PoolIntArray( -196612, -1073741824, 0, -196611, -1073741824, 0, -196610, -1073741824, 0, -196609, -1073741824, 0, -262144, -1073741824, 0, -262143, -1073741824, 0, -262142, -1073741824, 0, -262141, -1073741824, 0, -262140, -1073741824, 0, -131076, -1073741824, 0, -196604, -1073741824, 0, -65540, -1073741824, 0, -131068, -1073741824, 0, -4, -1073741824, 0, -65532, -1073741824, 0, 65532, -1073741824, 0, 4, -1073741824, 0, 131068, -1073741824, 0, 131069, -1073741824, 0, 131070, -1073741824, 0, 131071, -1073741824, 0, 65536, -1073741824, 0, 65537, -1073741824, 0, 65538, -1073741824, 0, 65539, -1073741824, 0, 65540, -1073741824, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -140.873, 2.23433 )
 
 [node name="Goal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 128, 0 )
+position = Vector2( 216.854, -157.081 )
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 188.814, 34.9068 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 44.4268, 17.4534 )
 

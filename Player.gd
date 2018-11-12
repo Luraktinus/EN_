@@ -14,6 +14,8 @@ const FRICTION_FLOOR = 0.89
 const FLOORSLIDE = 20
 const WALL_FRICTION = 0.8
 
+var control = 0
+
 var movement_acceleration = Vector2()
 var jump_acceleration = Vector2()
 var velocity = Vector2()
@@ -39,7 +41,11 @@ func _process(delta):
 	velocity.y += GRAVITY * delta
 	velocity += movement_acceleration * delta
 	velocity += jump_acceleration * delta
+	var lenvelocity = velocity.length()
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+	if lenvelocity > velocity.length() + 1500:
+		get_tree().change_scene("Levels/" + get_tree().get_current_scene().name+".tscn")
 
 
 func animation():
