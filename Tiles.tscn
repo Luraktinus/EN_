@@ -1,102 +1,318 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://tiles/block.png" type="Texture" id=1]
-[ext_resource path="res://tiles/round1.png" type="Texture" id=2]
-[ext_resource path="res://tiles/round2.png" type="Texture" id=3]
-[ext_resource path="res://tiles/strong slope.png" type="Texture" id=4]
-[ext_resource path="res://tiles/weak slope1.png" type="Texture" id=5]
-[ext_resource path="res://tiles/weak slope2.png" type="Texture" id=6]
+[ext_resource path="res://tiles/bg.png" type="Texture" id=2]
+[ext_resource path="res://tiles/round1.png" type="Texture" id=3]
+[ext_resource path="res://tiles/round2.png" type="Texture" id=4]
+[ext_resource path="res://tiles/strong slope.png" type="Texture" id=5]
+[ext_resource path="res://tiles/weak slope1.png" type="Texture" id=6]
+[ext_resource path="res://tiles/weak slope2.png" type="Texture" id=7]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( 64, 64, -64, 64, -64, -64, 64, -64 )
+
+[sub_resource type="NavigationPolygon" id=2]
+
+vertices = PoolVector2Array( -112, -112, 112, -112, 112, 112, -112, 112 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -112, -112, 112, -112, 112, 112, -112, 112 ) ]
+
+[sub_resource type="RectangleShape2D" id=20]
+
+custom_solver_bias = 0.0
+extents = Vector2( 64, 64 )
+
+[sub_resource type="NavigationPolygon" id=4]
+
+vertices = PoolVector2Array( -65, -64, 63, -64, 63, 64, -65, 64 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -65, -64, 63, -64, 63, 64, -65, 64 ) ]
+
+[sub_resource type="OccluderPolygon2D" id=5]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -64, -64, -64, -64, -56, -24, -40, 8, -8, 40, 24, 56, 64, 64, -64, 64 )
+
+[sub_resource type="NavigationPolygon" id=6]
+
+vertices = PoolVector2Array( 112, 64, 112, 160, -112, 160, 72, 56, 40, 40, -112, -64, 8, 8, -8, -24, -16, -64 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 3, 2 ), PoolIntArray( 4, 2, 5, 6 ), PoolIntArray( 7, 6, 5 ), PoolIntArray( 8, 7, 5 ) ]
+outlines = [ PoolVector2Array( -16, -64, -112, -64, -112, 160, 112, 160, 112, 64, 72, 56, 40, 40, 8, 8, -8, -24 ) ]
+
+[sub_resource type="NavigationPolygon" id=7]
+
+vertices = PoolVector2Array( 112, -112, 112, 16, 72, 8, 40, -8, 8, -40, -8, -72, -16, -112 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6 ) ]
+outlines = [ PoolVector2Array( -16, -112, -8, -72, 8, -40, 40, -8, 72, 8, 112, 16, 112, -112 ) ]
+
+[sub_resource type="OccluderPolygon2D" id=8]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -64, -64, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, -64, 64 )
+
+[sub_resource type="NavigationPolygon" id=9]
+
+vertices = PoolVector2Array( -64, -64, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, 64, 144, -144, 144, -144, -64 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ) ]
+outlines = [ PoolVector2Array( -64, -64, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, 64, 144, -144, 144, -144, -64 ) ]
+
+[sub_resource type="NavigationPolygon" id=10]
+
+vertices = PoolVector2Array( 104, -104, 104, 24, 96, -16, 16, -96, -24, -104, 80, -48, 48, -80 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 0 ), PoolIntArray( 0, 2, 5 ), PoolIntArray( 6, 3, 0 ), PoolIntArray( 6, 0, 5 ) ]
+outlines = [ PoolVector2Array( -24, -104, 16, -96, 48, -80, 80, -48, 96, -16, 104, 24, 104, -104 ) ]
+
+[sub_resource type="OccluderPolygon2D" id=11]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -64, -64, 64, 64, -64, 64 )
+
+[sub_resource type="NavigationPolygon" id=12]
+
+vertices = PoolVector2Array( -16, -112, 112, 16, 112, 112, -112, 112, -112, -112 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ) ]
+outlines = [ PoolVector2Array( -112, -112, -112, 112, 112, 112, 112, 16, -16, -112 ) ]
+
+[sub_resource type="NavigationPolygon" id=13]
+
+vertices = PoolVector2Array( -16, -104, 112, -104, 112, 24 )
+polygons = [ PoolIntArray( 0, 1, 2 ) ]
+outlines = [ PoolVector2Array( -16, -104, 112, -104, 112, 24 ) ]
+
+[sub_resource type="OccluderPolygon2D" id=14]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -64, -64, 64, 0, 64, 64, -64, 64, -64, -64 )
+
+[sub_resource type="NavigationPolygon" id=15]
+
+vertices = PoolVector2Array( -16, -112, 112, -48, 112, 112, -112, 112, -112, -112 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ) ]
+outlines = [ PoolVector2Array( -112, -112, -112, 112, 112, 112, 112, -48, -16, -112 ) ]
+
+[sub_resource type="NavigationPolygon" id=16]
+
+vertices = PoolVector2Array( -16, -112, 112, -112, 112, -48 )
+polygons = [ PoolIntArray( 0, 1, 2 ) ]
+outlines = [ PoolVector2Array( -16, -112, 112, -112, 112, -48 ) ]
+
+[sub_resource type="OccluderPolygon2D" id=17]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( 64, 64, -64, 64, -64, 0 )
+
+[sub_resource type="NavigationPolygon" id=18]
+
+vertices = PoolVector2Array( -112, 112, -112, -48, -16, -48, 112, 16, 112, 112 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ) ]
+outlines = [ PoolVector2Array( 112, 112, 112, 16, -16, -48, -112, -48, -112, 112 ) ]
+
+[sub_resource type="NavigationPolygon" id=19]
+
+vertices = PoolVector2Array( 112, -104, 112, 16, -16, -48, -112, -104, -112, -48 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 3, 2 ) ]
+outlines = [ PoolVector2Array( -112, -48, -16, -48, 112, 16, 112, -104, -112, -104 ) ]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Block" type="Sprite" parent="."]
-editor/display_folded = true
-position = Vector2( 64, 64 )
+[node name="block" type="Sprite" parent="."]
+position = Vector2( -1024, 0 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Block"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="block"]
+occluder = SubResource( 1 )
+light_mask = 1
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="block"]
+navpoly = SubResource( 2 )
+enabled = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="block"]
 input_pickable = false
 collision_layer = 1
-collision_mask = 0
+collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Block/StaticBody2D"]
-build_mode = 0
-polygon = PoolVector2Array( -64, -64, -64, 64, 64, 64, 64, -64 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block/StaticBody2D"]
+shape = SubResource( 20 )
 
-[node name="Round1" type="Sprite" parent="."]
-position = Vector2( 192, 64 )
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( -512, 0 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Round1"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="bg"]
+position = Vector2( 1, 0 )
+navpoly = SubResource( 4 )
+enabled = true
+
+[node name="roundin" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roundin"]
 input_pickable = false
 collision_layer = 1
-collision_mask = 0
+collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round1/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="roundin/StaticBody2D"]
 build_mode = 0
 polygon = PoolVector2Array( -64, -64, -56, -24, -40, 8, -8, 40, 24, 56, 64, 64, -64, 64 )
 
-[node name="Round2" type="Sprite" parent="."]
-position = Vector2( 320, 64 )
-texture = ExtResource( 3 )
+[node name="LightOccluder2D" type="LightOccluder2D" parent="roundin"]
+occluder = SubResource( 5 )
+light_mask = 1
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Round2"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="roundin"]
+position = Vector2( 0, -48 )
+navpoly = SubResource( 6 )
+enabled = false
+
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="roundin"]
+navpoly = SubResource( 7 )
+enabled = true
+
+[node name="roundout" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 2048, 0 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roundout"]
 input_pickable = false
 collision_layer = 1
-collision_mask = 0
+collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round2/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="roundout/StaticBody2D"]
 build_mode = 0
 polygon = PoolVector2Array( -64, -64, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, -64, 64 )
 
-[node name="StrongSlope" type="Sprite" parent="."]
-position = Vector2( 64, 192 )
-texture = ExtResource( 4 )
+[node name="LightOccluder2D" type="LightOccluder2D" parent="roundout"]
+occluder = SubResource( 8 )
+light_mask = 1
 
-[node name="StaticBody2D" type="StaticBody2D" parent="StrongSlope"]
-input_pickable = false
-collision_layer = 1
-collision_mask = 0
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="roundout"]
+position = Vector2( 40, -40 )
+navpoly = SubResource( 9 )
+enabled = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StrongSlope/StaticBody2D"]
-build_mode = 0
-polygon = PoolVector2Array( -64, -64, -64, 64, 64, 64 )
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="roundout"]
+navpoly = SubResource( 10 )
+enabled = true
 
-[node name="WeakSlope1" type="Sprite" parent="."]
-position = Vector2( 192, 192 )
+[node name="strong slope" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1536, 0 )
 texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="StaticBody2D" type="StaticBody2D" parent="WeakSlope1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="strong slope"]
 input_pickable = false
 collision_layer = 1
-collision_mask = 0
+collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WeakSlope1/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="strong slope/StaticBody2D"]
 build_mode = 0
-polygon = PoolVector2Array( -64, -64, -64, 64, 64, 64, 64, 0 )
+polygon = PoolVector2Array( -64, -64, 64, 64, -64, 64 )
 
-[node name="WeakSlope2" type="Sprite" parent="."]
-position = Vector2( 320, 192 )
+[node name="LightOccluder2D" type="LightOccluder2D" parent="strong slope"]
+occluder = SubResource( 11 )
+light_mask = 1
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="strong slope"]
+navpoly = SubResource( 12 )
+enabled = false
+
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="strong slope"]
+position = Vector2( 0, -8 )
+navpoly = SubResource( 13 )
+enabled = true
+
+[node name="weak slope high" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1024, 0 )
 texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="StaticBody2D" type="StaticBody2D" parent="WeakSlope2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="weak slope high"]
 input_pickable = false
 collision_layer = 1
-collision_mask = 0
+collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WeakSlope2/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="weak slope high/StaticBody2D"]
 build_mode = 0
-polygon = PoolVector2Array( -64, 0, -64, 64, 64, 64 )
+polygon = PoolVector2Array( -64, -64, 64, 0, 64, 64, -64, 64 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="weak slope high"]
+occluder = SubResource( 14 )
+light_mask = 1
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weak slope high"]
+navpoly = SubResource( 15 )
+enabled = false
+
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="weak slope high"]
+navpoly = SubResource( 16 )
+enabled = true
+
+[node name="weak slope low" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 512, 0 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="weak slope low"]
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="weak slope low/StaticBody2D"]
+build_mode = 0
+polygon = PoolVector2Array( -64, 0, 64, 64, -64, 64 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="weak slope low"]
+occluder = SubResource( 17 )
+light_mask = 1
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weak slope low"]
+navpoly = SubResource( 18 )
+enabled = false
+
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="weak slope low"]
+navpoly = SubResource( 19 )
+enabled = true
 

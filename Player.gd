@@ -24,12 +24,11 @@ var jump
 var walk_left
 var walk_right
 
+
 func _process(delta):
-	
 	walk_right = Input.is_action_pressed("ui_right")
 	walk_left = Input.is_action_pressed("ui_left")
 	jump = Input.is_action_pressed("ui_accept")
-	
 	
 	animation()
 	walk()
@@ -44,7 +43,7 @@ func _process(delta):
 	var lenvelocity = velocity.length()
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	if lenvelocity > velocity.length() + 1500:
+	if lenvelocity/(delta+0.0000000001)/60 > velocity.length()/(delta+0.0000000001)/60 + 1500:
 		get_tree().change_scene("Levels/" + get_tree().get_current_scene().name+".tscn")
 
 
@@ -70,6 +69,7 @@ func animation():
 	elif velocity.x > 0:
 		$Sprite.scale = Vector2(1, 1)
 
+
 func walk():
 	if walk_left:
 		if is_on_floor():
@@ -83,16 +83,13 @@ func walk():
 			movement_acceleration.x = AIR_SPEED
 	else:
 		movement_acceleration = Vector2()
-		
-		
-	
-	
+
+
 func friction(): 
 	if is_on_floor() and not (walk_left or walk_right):
 		velocity.x *= FRICTION_FLOOR
 	else:
 		velocity.x *= FRICTION_AIR
-	
 
 
 func jump():
@@ -112,18 +109,18 @@ func jump():
 	if jump_acceleration.y > 0 or is_on_ceiling():
 		jump_acceleration.y = 0
 
-		
-		
+
 func is_wallsliding():
 	if (walk_left or walk_right) and ($RayLeft.is_colliding() or $RayRight.is_colliding()) and velocity.y > 0:
 		return true
 	else:
 		return false
-		
+
 
 func wallslide():
 	if is_wallsliding():
 		velocity.y *= WALL_FRICTION
+
 
 func walljump():
 	if is_wallsliding() and jump and not jumped_last_frame:
@@ -137,6 +134,7 @@ func walljump():
 			jumped_last_frame = true
 	if is_wallsliding() and not jump:
 		jumped_last_frame = false
+
 
 #--- ESC exits
 func _input(event):
