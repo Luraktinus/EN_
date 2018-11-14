@@ -4,7 +4,7 @@
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D"]
+[node name="TEST" type="Node2D"]
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 

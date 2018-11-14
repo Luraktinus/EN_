@@ -14,7 +14,7 @@ const FRICTION_FLOOR = 0.89
 const FLOORSLIDE = 20
 const WALL_FRICTION = 0.8
 
-var control = 0
+
 
 var movement_acceleration = Vector2()
 var jump_acceleration = Vector2()
@@ -23,6 +23,8 @@ var jumped_last_frame = false
 var jump 
 var walk_left
 var walk_right
+
+
 
 
 func _process(delta):
