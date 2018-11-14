@@ -296,9 +296,9 @@ polygon = PoolVector2Array( -64, 64, -64, -64, -56, -24, -40, 8, -8, 40, 24, 56,
 
 [sub_resource type="NavigationPolygon" id=45]
 
-vertices = PoolVector2Array( 16, -56, 64, -56, 64, 64, 24, 56, -8, 40, -40, 8, -56, -24, -56, -56, -16, -56, -16, -64, 0, -64, 16, -64 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6 ), PoolIntArray( 6, 7, 8 ), PoolIntArray( 0, 6, 8 ), PoolIntArray( 0, 8, 9, 10 ), PoolIntArray( 0, 10, 11 ) ]
-outlines = [ PoolVector2Array( 64, 64, 24, 56, -8, 40, -40, 8, -56, -24, -56, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 64, -56 ) ]
+vertices = PoolVector2Array( 16, -56, 64, 0, 64, 64, 24, 56, -8, 40, -40, 8, -56, -24, -16, -56, 0, -64, -56, -56, -16, -64, 16, -64, 64, -56 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ), PoolIntArray( 6, 9, 7 ), PoolIntArray( 7, 10, 8 ), PoolIntArray( 8, 11, 0 ), PoolIntArray( 0, 12, 1 ) ]
+outlines = [ PoolVector2Array( 64, 64, 24, 56, -8, 40, -40, 8, -56, -24, -56, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 64, -56, 64, 0 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=46]
 
@@ -379,6 +379,7 @@ __meta__ = {
 }
 
 [node name="block" type="Sprite" parent="."]
+editor/display_folded = true
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
@@ -413,6 +414,7 @@ navpoly = SubResource( 3 )
 enabled = true
 
 [node name="weakslope01" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 256 )
 texture = ExtResource( 3 )
 __meta__ = {
@@ -852,6 +854,7 @@ navpoly = SubResource( 33 )
 enabled = true
 
 [node name="strongslope01" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 768 )
 texture = ExtResource( 19 )
 __meta__ = {
@@ -991,7 +994,6 @@ navpoly = SubResource( 43 )
 enabled = true
 
 [node name="roundin02" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 256, 1024 )
 texture = ExtResource( 24 )
 __meta__ = {
@@ -1131,6 +1133,7 @@ navpoly = SubResource( 53 )
 enabled = true
 
 [node name="roundout03" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 512, 1280 )
 texture = ExtResource( 29 )
 __meta__ = {
