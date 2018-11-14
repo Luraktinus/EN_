@@ -1,14 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
 [ext_resource path="res://EnemyHitbox.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 9, 7.5 )
-
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
@@ -26,28 +21,6 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -2.5 )
-shape = SubResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2( -10.8855, 0.451307 )
-polygon = PoolVector2Array( 1.88549, 4.54869, 19.8855, 4.54869, 10.8855, -10.4513 )
-uv = PoolVector2Array(  )
-splits = PoolIntArray(  )
-color = Color( 0.992157, 0.447059, 0.447059, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-skeleton = NodePath("")
-invert_enable = false
-invert_border = 100.0
-bones = [  ]
-
 [node name="EnemyHitbox" type="Area2D" parent="."]
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -61,14 +34,28 @@ audio_bus_name = "Master"
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyHitbox"]
-shape = SubResource( 2 )
+rotation = 3.14159
+shape = SubResource( 1 )
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 5.1 )
-collision_mask = 5
-collide_with_areas = false
-collide_with_bodies = true
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 5.5, -5, 8.5, 10, -8.5, 10, -6, -5 )
+uv = PoolVector2Array(  )
+splits = PoolIntArray(  )
+color = Color( 0.823529, 0.141176, 0.141176, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+skeleton = NodePath("")
+invert_enable = false
+invert_border = 100.0
+bones = [  ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 0
+polygon = PoolVector2Array( -6, -5, 5.5, -5, 8.5, 10, -8.5, 10 )
 
 [connection signal="body_entered" from="EnemyHitbox" to="EnemyHitbox" method="_on_EnemyHitbox_body_entered"]

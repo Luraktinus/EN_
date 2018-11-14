@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/block.png-4ba567ff2d608ee8eb6f79d8819b5bc4.stex"
+path="res://.import/weakslopemirror2.png-a2154a2252a57fcf9b6569e8e2b7224a.stex"
 
 [deps]
 
-source_file="res://tiles/block.png"
-dest_files=[ "res://.import/block.png-4ba567ff2d608ee8eb6f79d8819b5bc4.stex" ]
+source_file="res://tiles/weak slope low/weakslopemirror2.png"
+dest_files=[ "res://.import/weakslopemirror2.png-a2154a2252a57fcf9b6569e8e2b7224a.stex" ]
 
 [params]
 

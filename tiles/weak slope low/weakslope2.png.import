@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/block.png-4ba567ff2d608ee8eb6f79d8819b5bc4.stex"
+path="res://.import/weakslope2.png-804ae70e2f6de797c5442c3245b45138.stex"
 
 [deps]
 
-source_file="res://tiles/block.png"
-dest_files=[ "res://.import/block.png-4ba567ff2d608ee8eb6f79d8819b5bc4.stex" ]
+source_file="res://tiles/weak slope low/weakslope2.png"
+dest_files=[ "res://.import/weakslope2.png-804ae70e2f6de797c5442c3245b45138.stex" ]
 
 [params]
 
