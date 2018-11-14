@@ -2930,7 +2930,6 @@ __meta__ = {
 }
 
 [node name="JUMP" type="TouchScreenButton" parent="."]
-visible = false
 position = Vector2( -1024, 320 )
 normal = ExtResource( 2 )
 pressed = ExtResource( 2 )
@@ -2943,7 +2942,6 @@ action = "ui_accept"
 visibility_mode = 1
 
 [node name="LEFT" type="TouchScreenButton" parent="."]
-visible = false
 position = Vector2( 448, 576 )
 rotation = -1.5708
 normal = ExtResource( 2 )
@@ -2957,7 +2955,6 @@ action = "ui_left"
 visibility_mode = 1
 
 [node name="RIGHT" type="TouchScreenButton" parent="."]
-visible = false
 position = Vector2( 1027.33, 306.349 )
 rotation = 1.5708
 normal = ExtResource( 2 )
