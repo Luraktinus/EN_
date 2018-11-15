@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://music/02_Theta.ogg" type="AudioStream" id=2]
-[ext_resource path="res://Tiles.tres" type="TileSet" id=3]
-[ext_resource path="res://Goal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=5]
-
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=3]
 
 [node name="2" type="Node2D"]
 
@@ -13,21 +10,12 @@
 position = Vector2( 701.757, 532.716 )
 z_index = 10
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
-volume_db = -20.0
-pitch_scale = 1.0
-autoplay = true
-stream_paused = false
-mix_target = 0
-bus = "Master"
-
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Navigation2D"]
 scale = Vector2( 0.5, 0.5 )
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = null
 cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -44,23 +32,23 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( -524267, 0, 0, -524266, 0, 0, -524265, 0, 0, -524264, 0, 0, -524263, 0, 0, -524262, 0, 0, -524261, 0, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, 0, -458738, 0, 0, -458737, 0, 0, -458736, 0, 0, -458735, 0, 0, -458734, 0, 0, -458733, 0, 0, -458732, 0, 0, -458724, 0, 0, -458723, 0, 0, -458722, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393185, 0, 0, -393184, 0, 0, -262152, 0, 0, -262151, 0, 0, -262150, 0, 0, -327647, 0, 0, -196618, 0, 0, -196617, 0, 0, -262110, 0, 0, -131082, 0, 0, -196573, 0, 0, -65547, 0, 0, -131037, 0, 0, -12, 0, 0, -65500, 0, 0, 65523, 0, 0, 36, 0, 0, 37, 0, 0, 131058, 0, 0, 65572, 0, 0, 196593, 0, 0, 131108, 0, 0, 262128, 0, 0, 196645, 0, 0, 327664, 0, 0, 262181, 0, 0, 393199, 0, 0, 327717, 0, 0, 458735, 0, 0, 393253, 0, 0, 524271, 0, 0, 458789, 0, 0, 589807, 0, 0, 524325, 0, 0, 655342, 0, 0, 589862, 0, 0, 720878, 0, 0, 655398, 0, 0, 786414, 0, 0, 720935, 0, 0, 720936, 0, 0, 851950, 0, 0, 786471, 0, 0, 917486, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 852007, 0, 0, 983022, 0, 0, 917543, 0, 0, 1048558, 0, 0, 983079, 0, 0, 1114094, 0, 0, 1048614, 0, 0, 1179630, 0, 0, 1114150, 0, 0, 1245166, 0, 0, 1179686, 0, 0, 1310702, 0, 0, 1245222, 0, 0, 1376238, 0, 0, 1310758, 0, 0, 1441774, 0, 0, 1376292, 0, 0, 1376293, 0, 0, 1507310, 0, 0, 1441827, 0, 0, 1572846, 0, 0, 1507361, 0, 0, 1507362, 0, 0, 1638382, 0, 0, 1638389, 0, 0, 1638390, 0, 0, 1638391, 0, 0, 1638392, 0, 0, 1638393, 0, 0, 1638394, 0, 0, 1638395, 0, 0, 1638396, 0, 0, 1638397, 0, 0, 1638398, 0, 0, 1638399, 0, 0, 1572864, 0, 0, 1572896, 0, 0, 1703916, 0, 0, 1703917, 0, 0, 1703918, 0, 0, 1703919, 0, 0, 1703920, 0, 0, 1703921, 0, 0, 1703922, 0, 0, 1703923, 0, 0, 1703924, 0, 0, 1638401, 0, 0, 1638402, 0, 0, 1638403, 0, 0, 1638404, 0, 0, 1638405, 0, 0, 1638406, 0, 0, 1638407, 0, 0, 1638408, 0, 0, 1638409, 0, 0, 1638410, 0, 0, 1638411, 0, 0, 1638412, 0, 0, 1638413, 0, 0, 1638414, 0, 0, 1638415, 0, 0, 1638416, 0, 0, 1638417, 0, 0, 1638418, 0, 0, 1638419, 0, 0, 1638420, 0, 0, 1638421, 0, 0, 1638422, 0, 0, 1638423, 0, 0, 1638424, 0, 0, 1638429, 0, 0, 1638430, 0, 0, 1638431, 0, 0, 1703961, 0, 0, 1703962, 0, 0, 1703963, 0, 0, 1703964, 0, 0 )
 
-[node name="Goal" parent="." instance=ExtResource( 4 )]
+[node name="Goal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3205.75, 699.224 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Enemy" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 1323.19, 1080.31 )
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 1005.63, 1101.48 )
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 783.332, 1101.48 )
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 486.936, 1133.24 )
 
-[node name="Enemy5" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 169.369, 1175.58 )
 

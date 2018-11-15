@@ -1,35 +1,35 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=90 format=2]
 
-[ext_resource path="res://tiles/block.png" type="Texture" id=1]
-[ext_resource path="res://tiles/bg.png" type="Texture" id=2]
-[ext_resource path="res://tiles/weak slope low/weakslopemirror1.png" type="Texture" id=3]
-[ext_resource path="res://tiles/weak slope low/weakslopemirror2.png" type="Texture" id=4]
-[ext_resource path="res://tiles/weak slope low/weakslopemirror3.png" type="Texture" id=5]
-[ext_resource path="res://tiles/weak slope low/weakslopemirror4.png" type="Texture" id=6]
-[ext_resource path="res://tiles/weak slope low/weakslope1.png" type="Texture" id=7]
-[ext_resource path="res://tiles/weak slope low/weakslope2.png" type="Texture" id=8]
-[ext_resource path="res://tiles/weak slope low/weakslope3.png" type="Texture" id=9]
-[ext_resource path="res://tiles/weak slope low/weakslope4.png" type="Texture" id=10]
-[ext_resource path="res://tiles/weak slope high/weakslopemirror2.png" type="Texture" id=11]
-[ext_resource path="res://tiles/weak slope high/weakslopemirror3.png" type="Texture" id=12]
-[ext_resource path="res://tiles/weak slope high/weakslopemirror4.png" type="Texture" id=13]
-[ext_resource path="res://tiles/weak slope high/weakslopemirror1.png" type="Texture" id=14]
-[ext_resource path="res://tiles/weak slope high/weakslope2.png" type="Texture" id=15]
-[ext_resource path="res://tiles/weak slope high/weakslope3.png" type="Texture" id=16]
-[ext_resource path="res://tiles/weak slope high/weakslope4.png" type="Texture" id=17]
-[ext_resource path="res://tiles/weak slope high/weakslope1.png" type="Texture" id=18]
-[ext_resource path="res://tiles/strong slope/strongslope1.png" type="Texture" id=19]
-[ext_resource path="res://tiles/strong slope/strongslope2.png" type="Texture" id=20]
-[ext_resource path="res://tiles/strong slope/strongslope3.png" type="Texture" id=21]
-[ext_resource path="res://tiles/strong slope/strongslope4.png" type="Texture" id=22]
-[ext_resource path="res://tiles/roundin/round3.png" type="Texture" id=23]
-[ext_resource path="res://tiles/roundin/round1.png" type="Texture" id=24]
-[ext_resource path="res://tiles/roundin/round2.png" type="Texture" id=25]
-[ext_resource path="res://tiles/roundin/round4.png" type="Texture" id=26]
-[ext_resource path="res://tiles/roundout/round3.png" type="Texture" id=27]
-[ext_resource path="res://tiles/roundout/round4.png" type="Texture" id=28]
-[ext_resource path="res://tiles/roundout/round1.png" type="Texture" id=29]
-[ext_resource path="res://tiles/roundout/round2.png" type="Texture" id=30]
+[ext_resource path="res://Tiles/block.png" type="Texture" id=1]
+[ext_resource path="res://Tiles/bg.png" type="Texture" id=2]
+[ext_resource path="res://Tiles/weak slope low/weakslopemirror1.png" type="Texture" id=3]
+[ext_resource path="res://Tiles/weak slope low/weakslopemirror2.png" type="Texture" id=4]
+[ext_resource path="res://Tiles/weak slope low/weakslopemirror3.png" type="Texture" id=5]
+[ext_resource path="res://Tiles/weak slope low/weakslopemirror4.png" type="Texture" id=6]
+[ext_resource path="res://Tiles/weak slope low/weakslope1.png" type="Texture" id=7]
+[ext_resource path="res://Tiles/weak slope low/weakslope2.png" type="Texture" id=8]
+[ext_resource path="res://Tiles/weak slope low/weakslope3.png" type="Texture" id=9]
+[ext_resource path="res://Tiles/weak slope low/weakslope4.png" type="Texture" id=10]
+[ext_resource path="res://Tiles/weak slope high/weakslopemirror2.png" type="Texture" id=11]
+[ext_resource path="res://Tiles/weak slope high/weakslopemirror3.png" type="Texture" id=12]
+[ext_resource path="res://Tiles/weak slope high/weakslopemirror4.png" type="Texture" id=13]
+[ext_resource path="res://Tiles/weak slope high/weakslopemirror1.png" type="Texture" id=14]
+[ext_resource path="res://Tiles/weak slope high/weakslope2.png" type="Texture" id=15]
+[ext_resource path="res://Tiles/weak slope high/weakslope3.png" type="Texture" id=16]
+[ext_resource path="res://Tiles/weak slope high/weakslope4.png" type="Texture" id=17]
+[ext_resource path="res://Tiles/weak slope high/weakslope1.png" type="Texture" id=18]
+[ext_resource path="res://Tiles/strong slope/strongslope1.png" type="Texture" id=19]
+[ext_resource path="res://Tiles/strong slope/strongslope2.png" type="Texture" id=20]
+[ext_resource path="res://Tiles/strong slope/strongslope3.png" type="Texture" id=21]
+[ext_resource path="res://Tiles/strong slope/strongslope4.png" type="Texture" id=22]
+[ext_resource path="res://Tiles/roundin/round3.png" type="Texture" id=23]
+[ext_resource path="res://Tiles/roundin/round1.png" type="Texture" id=24]
+[ext_resource path="res://Tiles/roundin/round2.png" type="Texture" id=25]
+[ext_resource path="res://Tiles/roundin/round4.png" type="Texture" id=26]
+[ext_resource path="res://Tiles/roundout/round3.png" type="Texture" id=27]
+[ext_resource path="res://Tiles/roundout/round4.png" type="Texture" id=28]
+[ext_resource path="res://Tiles/roundout/round1.png" type="Texture" id=29]
+[ext_resource path="res://Tiles/roundout/round2.png" type="Texture" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -126,247 +126,259 @@ vertices = PoolVector2Array( -64, -56, -48, -56, 64, 0, 64, 64, 16, 64, 0, 64, -
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ) ]
 outlines = [ PoolVector2Array( -64, -56, -48, -56, 64, 0, 64, 64, 16, 64, 0, 64, -16, 64, -64, 64, -64, 0 ) ]
 
-[sub_resource type="NavigationPolygon" id=17]
+[sub_resource type="OccluderPolygon2D" id=17]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -64, -64, 64, 0, 64, -64 )
+
+[sub_resource type="NavigationPolygon" id=18]
 
 vertices = PoolVector2Array( 16, -56, -16, 64, -64, 64, -64, 0, -16, -56, 0, -64, 16, -64, -64, -56, -16, -64, 56, -56, 56, -48, 0, 64 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6 ), PoolIntArray( 3, 7, 4 ), PoolIntArray( 4, 8, 5 ), PoolIntArray( 0, 9, 10, 11, 1 ) ]
 outlines = [ PoolVector2Array( 0, 64, -16, 64, -64, 64, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 56, -56, 56, -48 ) ]
 
-[sub_resource type="OccluderPolygon2D" id=18]
+[sub_resource type="OccluderPolygon2D" id=19]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, 0, 64, -64, 64, 64, -64, 64 )
-
-[sub_resource type="NavigationPolygon" id=19]
-
-vertices = PoolVector2Array( 16, -56, 48, -56, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64 )
-polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 2, 3, 4 ), PoolIntArray( 0, 2, 4 ), PoolIntArray( 0, 4, 5, 6 ), PoolIntArray( 0, 6, 7 ) ]
-outlines = [ PoolVector2Array( -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 48, -56 ) ]
+polygon = PoolVector2Array( 64, 64, 64, -64, 0, 64 )
 
 [sub_resource type="OccluderPolygon2D" id=20]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 0, -64, 64, 64, -64, 64, -64, -64 )
+polygon = PoolVector2Array( -64, 0, 64, -64, 64, 64, -64, 64 )
 
 [sub_resource type="NavigationPolygon" id=21]
 
-vertices = PoolVector2Array( 64, 0, 64, 64, 0, -64, 16, -56, 16, -64, 64, -56 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 3 ), PoolIntArray( 0, 3, 5 ) ]
-outlines = [ PoolVector2Array( 0, -64, 16, -64, 16, -56, 64, -56, 64, 0, 64, 64 ) ]
+vertices = PoolVector2Array( 16, -56, 48, -56, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 2, 3, 4 ), PoolIntArray( 0, 2, 4 ), PoolIntArray( 0, 4, 5, 6 ), PoolIntArray( 0, 6, 7 ) ]
+outlines = [ PoolVector2Array( -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 48, -56 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=22]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, 64, -64, -64, 64, -64, 64, 0 )
+polygon = PoolVector2Array( 0, -64, 64, 64, -64, 64, -64, -64 )
 
 [sub_resource type="NavigationPolygon" id=23]
 
-vertices = PoolVector2Array( -64, 64, 64, 0, 64, 64, 16, 64, 0, 64, -16, 64 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
-outlines = [ PoolVector2Array( -64, 64, 64, 0, 64, 64, 16, 64, 0, 64, -16, 64 ) ]
+vertices = PoolVector2Array( 64, 0, 64, 64, 0, -64, 16, -56, 16, -64, 64, -56 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 3 ), PoolIntArray( 0, 3, 5 ) ]
+outlines = [ PoolVector2Array( 0, -64, 16, -64, 16, -56, 64, -56, 64, 0, 64, 64 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=24]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, -64, 64, -64, 64, 64, 0, 64 )
+polygon = PoolVector2Array( -64, 64, -64, -64, 64, -64, 64, 0 )
 
 [sub_resource type="NavigationPolygon" id=25]
 
-vertices = PoolVector2Array( 0, 64, -16, 64, -64, 64, -64, 0, -64, -56, -56, -48 )
+vertices = PoolVector2Array( -64, 64, 64, 0, 64, 64, 16, 64, 0, 64, -16, 64 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
-outlines = [ PoolVector2Array( 0, 64, -16, 64, -64, 64, -64, 0, -64, -56, -56, -48 ) ]
+outlines = [ PoolVector2Array( -64, 64, 64, 0, 64, 64, 16, 64, 0, 64, -16, 64 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=26]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, -64, 64, 0, 64, 64, -64, 64 )
+polygon = PoolVector2Array( -64, -64, 64, -64, 64, 64, 0, 64 )
 
 [sub_resource type="NavigationPolygon" id=27]
 
-vertices = PoolVector2Array( 64, 0, -48, -56, -16, -56, -16, -64, 0, -64, 16, -56, 16, -64, 64, -56 )
-polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 0, 2, 3, 4, 5 ), PoolIntArray( 4, 6, 5 ), PoolIntArray( 0, 5, 7 ) ]
-outlines = [ PoolVector2Array( -48, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 64, -56, 64, 0 ) ]
+vertices = PoolVector2Array( 0, 64, -16, 64, -64, 64, -64, 0, -64, -56, -56, -48 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+outlines = [ PoolVector2Array( 0, 64, -16, 64, -64, 64, -64, 0, -64, -56, -56, -48 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=28]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 0, 64, -64, 64, -64, -64, 64, -64 )
+polygon = PoolVector2Array( -64, -64, 64, 0, 64, 64, -64, 64 )
 
 [sub_resource type="NavigationPolygon" id=29]
 
-vertices = PoolVector2Array( 0, 64, 56, -48, 64, -56, 64, 0, 64, 64, 16, 64 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
-outlines = [ PoolVector2Array( 0, 64, 56, -48, 64, -56, 64, 0, 64, 64, 16, 64 ) ]
+vertices = PoolVector2Array( 64, 0, -48, -56, -16, -56, -16, -64, 0, -64, 16, -56, 16, -64, 64, -56 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 0, 2, 3, 4, 5 ), PoolIntArray( 4, 6, 5 ), PoolIntArray( 0, 5, 7 ) ]
+outlines = [ PoolVector2Array( -48, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 64, -56, 64, 0 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=30]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, 0, 64, 64, 64, -64, -64, -64 )
+polygon = PoolVector2Array( 0, 64, -64, 64, -64, -64, 64, -64 )
 
 [sub_resource type="NavigationPolygon" id=31]
 
-vertices = PoolVector2Array( -64, 0, 64, 64, 16, 64, 0, 64, -16, 64, -64, 64 )
+vertices = PoolVector2Array( 0, 64, 56, -48, 64, -56, 64, 0, 64, 64, 16, 64 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
-outlines = [ PoolVector2Array( -64, 0, 64, 64, 16, 64, 0, 64, -16, 64, -64, 64 ) ]
+outlines = [ PoolVector2Array( 0, 64, 56, -48, 64, -56, 64, 0, 64, 64, 16, 64 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=32]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 0, -64, 64, -64, 64, 64, -64, 64 )
+polygon = PoolVector2Array( -64, 0, 64, 64, 64, -64, -64, -64 )
 
 [sub_resource type="NavigationPolygon" id=33]
 
-vertices = PoolVector2Array( 0, -64, -64, 64, -64, 0, -16, -56, -64, -56, -16, -64 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 3 ), PoolIntArray( 0, 3, 5 ) ]
-outlines = [ PoolVector2Array( -64, 64, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64 ) ]
+vertices = PoolVector2Array( -64, 0, 64, 64, 16, 64, 0, 64, -16, 64, -64, 64 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+outlines = [ PoolVector2Array( -64, 0, 64, 64, 16, 64, 0, 64, -16, 64, -64, 64 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=34]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, 64, 64, -64, 64, 64 )
+polygon = PoolVector2Array( 0, -64, 64, -64, 64, 64, -64, 64 )
 
 [sub_resource type="NavigationPolygon" id=35]
 
-vertices = PoolVector2Array( 16, -56, 56, -56, -64, 64, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 0, 3, 5 ), PoolIntArray( 0, 5, 6, 7 ), PoolIntArray( 0, 7, 8 ) ]
-outlines = [ PoolVector2Array( -64, 64, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 56, -56 ) ]
+vertices = PoolVector2Array( 0, -64, -64, 64, -64, 0, -16, -56, -64, -56, -16, -64 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 3 ), PoolIntArray( 0, 3, 5 ) ]
+outlines = [ PoolVector2Array( -64, 64, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=36]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, -64, 64, 64, -64, 64 )
+polygon = PoolVector2Array( -64, 64, 64, -64, 64, 64 )
 
 [sub_resource type="NavigationPolygon" id=37]
 
-vertices = PoolVector2Array( 64, 64, -56, -56, -16, -56, 64, 0, -16, -64, 0, -64, 16, -56, 16, -64, 64, -56 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 2, 4, 5, 6 ), PoolIntArray( 5, 7, 6 ), PoolIntArray( 3, 6, 8 ) ]
-outlines = [ PoolVector2Array( 64, 64, -56, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 64, -56, 64, 0 ) ]
+vertices = PoolVector2Array( 16, -56, 56, -56, -64, 64, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 0, 3, 5 ), PoolIntArray( 0, 5, 6, 7 ), PoolIntArray( 0, 7, 8 ) ]
+outlines = [ PoolVector2Array( -64, 64, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 56, -56 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=38]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, -64, 64, -64, -64, 64 )
+polygon = PoolVector2Array( -64, -64, 64, 64, -64, 64 )
 
 [sub_resource type="NavigationPolygon" id=39]
 
-vertices = PoolVector2Array( -64, 64, 56, -56, 64, -56, 64, 0, 64, 64, 0, 64 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
-outlines = [ PoolVector2Array( -64, 64, 56, -56, 64, -56, 64, 0, 64, 64, 0, 64 ) ]
+vertices = PoolVector2Array( 64, 64, -56, -56, -16, -56, 64, 0, -16, -64, 0, -64, 16, -56, 16, -64, 64, -56 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 2, 4, 5, 6 ), PoolIntArray( 5, 7, 6 ), PoolIntArray( 3, 6, 8 ) ]
+outlines = [ PoolVector2Array( 64, 64, -56, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 64, -56, 64, 0 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=40]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, -64, 64, -64, 64, 64 )
+polygon = PoolVector2Array( -64, -64, 64, -64, -64, 64 )
 
 [sub_resource type="NavigationPolygon" id=41]
 
-vertices = PoolVector2Array( 64, 64, 16, 64, 0, 64, -16, 64, -64, 64, -64, 0, -64, -56, -56, -56 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
-outlines = [ PoolVector2Array( 64, 64, 16, 64, 0, 64, -16, 64, -64, 64, -64, 0, -64, -56, -56, -56 ) ]
+vertices = PoolVector2Array( -64, 64, 56, -56, 64, -56, 64, 0, 64, 64, 0, 64 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+outlines = [ PoolVector2Array( -64, 64, 56, -56, 64, -56, 64, 0, 64, 64, 0, 64 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=42]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, 64, -24, 56, 8, 40, 40, 8, 56, -24, 64, -64, 64, 64 )
+polygon = PoolVector2Array( -64, -64, 64, -64, 64, 64 )
 
 [sub_resource type="NavigationPolygon" id=43]
 
-vertices = PoolVector2Array( 16, -56, 56, -24, 40, 8, 8, 40, -24, 56, -64, 64, -64, 0, -16, -56, 0, -64, -64, -56, -16, -64, 16, -64, 56, -56 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ), PoolIntArray( 6, 9, 7 ), PoolIntArray( 7, 10, 8 ), PoolIntArray( 8, 11, 0 ), PoolIntArray( 0, 12, 1 ) ]
-outlines = [ PoolVector2Array( -64, 64, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 56, -56, 56, -24, 40, 8, 8, 40, -24, 56 ) ]
+vertices = PoolVector2Array( 64, 64, 16, 64, 0, 64, -16, 64, -64, 64, -64, 0, -64, -56, -56, -56 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+outlines = [ PoolVector2Array( 64, 64, 16, 64, 0, 64, -16, 64, -64, 64, -64, 0, -64, -56, -56, -56 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=44]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, 64, -64, -64, -56, -24, -40, 8, -8, 40, 24, 56, 64, 64 )
+polygon = PoolVector2Array( -64, 64, -24, 56, 8, 40, 40, 8, 56, -24, 64, -64, 64, 64 )
 
 [sub_resource type="NavigationPolygon" id=45]
 
-vertices = PoolVector2Array( 16, -56, 64, 0, 64, 64, 24, 56, -8, 40, -40, 8, -56, -24, -16, -56, 0, -64, -56, -56, -16, -64, 16, -64, 64, -56 )
+vertices = PoolVector2Array( 16, -56, 56, -24, 40, 8, 8, 40, -24, 56, -64, 64, -64, 0, -16, -56, 0, -64, -64, -56, -16, -64, 16, -64, 56, -56 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ), PoolIntArray( 6, 9, 7 ), PoolIntArray( 7, 10, 8 ), PoolIntArray( 8, 11, 0 ), PoolIntArray( 0, 12, 1 ) ]
-outlines = [ PoolVector2Array( 64, 64, 24, 56, -8, 40, -40, 8, -56, -24, -56, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 64, -56, 64, 0 ) ]
+outlines = [ PoolVector2Array( -64, 64, -64, 0, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 56, -56, 56, -24, 40, 8, 8, 40, -24, 56 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=46]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, 64, -56, 24, -40, -8, -8, -40, 24, -56, 64, -64, -64, -64 )
+polygon = PoolVector2Array( -64, 64, -64, -64, -56, -24, -40, 8, -8, 40, 24, 56, 64, 64 )
 
 [sub_resource type="NavigationPolygon" id=47]
 
-vertices = PoolVector2Array( -64, 64, -56, 24, -40, -8, -8, -40, 24, -56, 64, -56, 64, 0, 64, 64, 16, 64, 0, 64, -16, 64 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ) ]
-outlines = [ PoolVector2Array( -64, 64, -56, 24, -40, -8, -8, -40, 24, -56, 64, -56, 64, 0, 64, 64, 16, 64, 0, 64, -16, 64 ) ]
+vertices = PoolVector2Array( 16, -56, 64, 0, 64, 64, 24, 56, -8, 40, -40, 8, -56, -24, -16, -56, 0, -64, -56, -56, -16, -64, 16, -64, 64, -56 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ), PoolIntArray( 6, 9, 7 ), PoolIntArray( 7, 10, 8 ), PoolIntArray( 8, 11, 0 ), PoolIntArray( 0, 12, 1 ) ]
+outlines = [ PoolVector2Array( 64, 64, 24, 56, -8, 40, -40, 8, -56, -24, -56, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 64, -56, 64, 0 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=48]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, -64, 64, -64, 64, 64, 56, 24, 40, -8, 8, -40, -24, -56 )
+polygon = PoolVector2Array( -64, 64, -56, 24, -40, -8, -8, -40, 24, -56, 64, -64, -64, -64 )
 
 [sub_resource type="NavigationPolygon" id=49]
 
-vertices = PoolVector2Array( -64, -56, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, 16, 64, 0, 64, -16, 64, -64, 64, -64, 0 )
+vertices = PoolVector2Array( -64, 64, -56, 24, -40, -8, -8, -40, 24, -56, 64, -56, 64, 0, 64, 64, 16, 64, 0, 64, -16, 64 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ) ]
-outlines = [ PoolVector2Array( -64, -56, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, 16, 64, 0, 64, -16, 64, -64, 64, -64, 0 ) ]
+outlines = [ PoolVector2Array( -64, 64, -56, 24, -40, -8, -8, -40, 24, -56, 64, -56, 64, 0, 64, 64, 16, 64, 0, 64, -16, 64 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=50]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( 64, -64, 24, -56, -8, -40, -40, -8, -56, 24, -64, 64, 64, 64 )
+polygon = PoolVector2Array( -64, -64, 64, -64, 64, 64, 56, 24, 40, -8, 8, -40, -24, -56 )
 
 [sub_resource type="NavigationPolygon" id=51]
 
-vertices = PoolVector2Array( -56, 24, -64, 64, -64, 0, 16, -56, 24, -56, -8, -40, -40, -8, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64 )
-polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 6, 0, 2, 7 ), PoolIntArray( 6, 7, 8, 5 ), PoolIntArray( 3, 5, 8, 9, 10 ), PoolIntArray( 3, 10, 11 ) ]
-outlines = [ PoolVector2Array( -64, 64, -56, 24, -40, -8, -8, -40, 24, -56, 16, -56, 16, -64, 0, -64, -16, -64, -16, -56, -64, -56, -64, 0 ) ]
+vertices = PoolVector2Array( -64, -56, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, 16, 64, 0, 64, -16, 64, -64, 64, -64, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ) ]
+outlines = [ PoolVector2Array( -64, -56, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, 16, 64, 0, 64, -16, 64, -64, 64, -64, 0 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=52]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, -64, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, -64, 64 )
+polygon = PoolVector2Array( 64, -64, 24, -56, -8, -40, -40, -8, -56, 24, -64, 64, 64, 64 )
 
 [sub_resource type="NavigationPolygon" id=53]
 
-vertices = PoolVector2Array( 64, 0, 64, 64, 56, 24, 8, -40, -24, -56, -16, -56, 40, -8, 64, -56, 16, -56, -16, -64, 0, -64, 16, -64 )
-polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 0, 2, 6, 7 ), PoolIntArray( 8, 7, 6, 3 ), PoolIntArray( 8, 3, 5, 9, 10 ), PoolIntArray( 8, 10, 11 ) ]
-outlines = [ PoolVector2Array( 64, 64, 56, 24, 40, -8, 8, -40, -24, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 64, -56, 64, 0 ) ]
+vertices = PoolVector2Array( -56, 24, -64, 64, -64, 0, 16, -56, 24, -56, -8, -40, -40, -8, -64, -56, -16, -56, -16, -64, 0, -64, 16, -64 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 6, 0, 2, 7 ), PoolIntArray( 6, 7, 8, 5 ), PoolIntArray( 3, 5, 8, 9, 10 ), PoolIntArray( 3, 10, 11 ) ]
+outlines = [ PoolVector2Array( -64, 64, -56, 24, -40, -8, -8, -40, 24, -56, 16, -56, 16, -64, 0, -64, -16, -64, -16, -56, -64, -56, -64, 0 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=54]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, 64, -24, 56, 8, 40, 40, 8, 56, -24, 64, -64, -64, -64 )
+polygon = PoolVector2Array( -64, -64, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, -64, 64 )
 
 [sub_resource type="NavigationPolygon" id=55]
 
-vertices = PoolVector2Array( -16, 64, -64, 64, -24, 56, 56, -24, 64, -56, 64, 0, 40, 8, 64, 64, 16, 64, 8, 40, 0, 64 )
-polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 6, 3, 5, 7, 8 ), PoolIntArray( 0, 2, 9, 10 ), PoolIntArray( 9, 6, 8, 10 ) ]
-outlines = [ PoolVector2Array( -64, 64, -16, 64, 0, 64, 16, 64, 64, 64, 64, 0, 64, -56, 56, -24, 40, 8, 8, 40, -24, 56 ) ]
+vertices = PoolVector2Array( 64, 0, 64, 64, 56, 24, 8, -40, -24, -56, -16, -56, 40, -8, 64, -56, 16, -56, -16, -64, 0, -64, 16, -64 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 0, 2, 6, 7 ), PoolIntArray( 8, 7, 6, 3 ), PoolIntArray( 8, 3, 5, 9, 10 ), PoolIntArray( 8, 10, 11 ) ]
+outlines = [ PoolVector2Array( 64, 64, 56, 24, 40, -8, 8, -40, -24, -56, -16, -56, -16, -64, 0, -64, 16, -64, 16, -56, 64, -56, 64, 0 ) ]
 
 [sub_resource type="OccluderPolygon2D" id=56]
 
 closed = true
 cull_mode = 0
-polygon = PoolVector2Array( -64, -64, -56, -24, -40, 8, -8, 40, 24, 56, 64, 64, 64, -64 )
+polygon = PoolVector2Array( -64, 64, -24, 56, 8, 40, 40, 8, 56, -24, 64, -64, -64, -64 )
 
 [sub_resource type="NavigationPolygon" id=57]
+
+vertices = PoolVector2Array( -16, 64, -64, 64, -24, 56, 56, -24, 64, -56, 64, 0, 40, 8, 64, 64, 16, 64, 8, 40, 0, 64 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 6, 3, 5, 7, 8 ), PoolIntArray( 0, 2, 9, 10 ), PoolIntArray( 9, 6, 8, 10 ) ]
+outlines = [ PoolVector2Array( -64, 64, -16, 64, 0, 64, 16, 64, 64, 64, 64, 0, 64, -56, 56, -24, 40, 8, 8, 40, -24, 56 ) ]
+
+[sub_resource type="OccluderPolygon2D" id=58]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -64, -64, -56, -24, -40, 8, -8, 40, 24, 56, 64, 64, 64, -64 )
+
+[sub_resource type="NavigationPolygon" id=59]
 
 vertices = PoolVector2Array( 24, 56, 64, 64, 16, 64, -64, 0, -64, -56, -56, -24, -64, 64, -40, 8, -16, 64, -8, 40, 0, 64 )
 polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 6, 3, 5, 7, 8 ), PoolIntArray( 8, 7, 9, 10 ), PoolIntArray( 10, 9, 0, 2 ) ]
@@ -605,8 +617,11 @@ polygon = PoolVector2Array( -64, -64, 64, -64, 64, 0 )
 navpoly = SubResource( 16 )
 enabled = true
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="weakslope07"]
+occluder = SubResource( 17 )
+light_mask = 1
+
 [node name="weakslope08" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 1792, 256 )
 texture = ExtResource( 10 )
 __meta__ = {
@@ -626,11 +641,14 @@ build_mode = 0
 polygon = PoolVector2Array( 0, 64, 64, -64, 64, 64 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weakslope08"]
-navpoly = SubResource( 17 )
+navpoly = SubResource( 18 )
 enabled = true
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="weakslope08"]
+occluder = SubResource( 19 )
+light_mask = 1
+
 [node name="weakslopehigh01" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 512 )
 texture = ExtResource( 11 )
 __meta__ = {
@@ -650,11 +668,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 0, 64, -64, 64, 64, -64, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="weakslopehigh01"]
-occluder = SubResource( 18 )
+occluder = SubResource( 20 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weakslopehigh01"]
-navpoly = SubResource( 19 )
+navpoly = SubResource( 21 )
 enabled = true
 
 [node name="weakslopehigh02" type="Sprite" parent="."]
@@ -678,11 +696,11 @@ build_mode = 0
 polygon = PoolVector2Array( 0, -64, 64, 64, -64, 64, -64, -64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="weakslopehigh02"]
-occluder = SubResource( 20 )
+occluder = SubResource( 22 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weakslopehigh02"]
-navpoly = SubResource( 21 )
+navpoly = SubResource( 23 )
 enabled = true
 
 [node name="weakslopehigh03" type="Sprite" parent="."]
@@ -706,11 +724,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 64, -64, -64, 64, -64, 64, 0 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="weakslopehigh03"]
-occluder = SubResource( 22 )
+occluder = SubResource( 24 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weakslopehigh03"]
-navpoly = SubResource( 23 )
+navpoly = SubResource( 25 )
 enabled = true
 
 [node name="weakslopehigh04" type="Sprite" parent="."]
@@ -734,11 +752,11 @@ build_mode = 0
 polygon = PoolVector2Array( 0, 64, -64, -64, 64, -64, 64, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="weakslopehigh04"]
-occluder = SubResource( 24 )
+occluder = SubResource( 26 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weakslopehigh04"]
-navpoly = SubResource( 25 )
+navpoly = SubResource( 27 )
 enabled = true
 
 [node name="weakslopehigh05" type="Sprite" parent="."]
@@ -762,11 +780,11 @@ build_mode = 0
 polygon = PoolVector2Array( 64, 0, -64, -64, -64, 64, 64, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="weakslopehigh05"]
-occluder = SubResource( 26 )
+occluder = SubResource( 28 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weakslopehigh05"]
-navpoly = SubResource( 27 )
+navpoly = SubResource( 29 )
 enabled = true
 
 [node name="weakslopehigh06" type="Sprite" parent="."]
@@ -790,11 +808,11 @@ build_mode = 0
 polygon = PoolVector2Array( 0, 64, -64, 64, -64, -64, 64, -64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="weakslopehigh06"]
-occluder = SubResource( 28 )
+occluder = SubResource( 30 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weakslopehigh06"]
-navpoly = SubResource( 29 )
+navpoly = SubResource( 31 )
 enabled = true
 
 [node name="weakslopehigh07" type="Sprite" parent="."]
@@ -818,11 +836,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 0, 64, 64, 64, -64, -64, -64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="weakslopehigh07"]
-occluder = SubResource( 30 )
+occluder = SubResource( 32 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weakslopehigh07"]
-navpoly = SubResource( 31 )
+navpoly = SubResource( 33 )
 enabled = true
 
 [node name="weakslopehigh08" type="Sprite" parent="."]
@@ -846,11 +864,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 64, 0, -64, 64, -64, 64, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="weakslopehigh08"]
-occluder = SubResource( 32 )
+occluder = SubResource( 34 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="weakslopehigh08"]
-navpoly = SubResource( 33 )
+navpoly = SubResource( 35 )
 enabled = true
 
 [node name="strongslope01" type="Sprite" parent="."]
@@ -874,11 +892,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 64, 64, -64, 64, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="strongslope01"]
-occluder = SubResource( 34 )
+occluder = SubResource( 36 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="strongslope01"]
-navpoly = SubResource( 35 )
+navpoly = SubResource( 37 )
 enabled = true
 
 [node name="strongslope02" type="Sprite" parent="."]
@@ -902,11 +920,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, -64, 64, 64, -64, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="strongslope02"]
-occluder = SubResource( 36 )
+occluder = SubResource( 38 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="strongslope02"]
-navpoly = SubResource( 37 )
+navpoly = SubResource( 39 )
 enabled = true
 
 [node name="strongslope03" type="Sprite" parent="."]
@@ -930,11 +948,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 64, -64, -64, 64, -64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="strongslope03"]
-occluder = SubResource( 38 )
+occluder = SubResource( 40 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="strongslope03"]
-navpoly = SubResource( 39 )
+navpoly = SubResource( 41 )
 enabled = true
 
 [node name="strongslope04" type="Sprite" parent="."]
@@ -958,11 +976,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, -64, 64, 64, 64, -64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="strongslope04"]
-occluder = SubResource( 40 )
+occluder = SubResource( 42 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="strongslope04"]
-navpoly = SubResource( 41 )
+navpoly = SubResource( 43 )
 enabled = true
 
 [node name="roundin01" type="Sprite" parent="."]
@@ -986,11 +1004,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 64, -24, 56, 8, 40, 40, 8, 56, -24, 64, -64, 64, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="roundin01"]
-occluder = SubResource( 42 )
+occluder = SubResource( 44 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="roundin01"]
-navpoly = SubResource( 43 )
+navpoly = SubResource( 45 )
 enabled = true
 
 [node name="roundin02" type="Sprite" parent="."]
@@ -1013,11 +1031,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, -64, -56, -24, -40, 8, -8, 40, 24, 56, 64, 64, -64, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="roundin02"]
-occluder = SubResource( 44 )
+occluder = SubResource( 46 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="roundin02"]
-navpoly = SubResource( 45 )
+navpoly = SubResource( 47 )
 enabled = true
 
 [node name="roundin03" type="Sprite" parent="."]
@@ -1041,11 +1059,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 64, -56, 24, -40, -8, -8, -40, 24, -56, 64, -64, -64, -64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="roundin03"]
-occluder = SubResource( 46 )
+occluder = SubResource( 48 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="roundin03"]
-navpoly = SubResource( 47 )
+navpoly = SubResource( 49 )
 enabled = true
 
 [node name="roundin04" type="Sprite" parent="."]
@@ -1069,11 +1087,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, -64, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64, 64, -64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="roundin04"]
-occluder = SubResource( 48 )
+occluder = SubResource( 50 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="roundin04"]
-navpoly = SubResource( 49 )
+navpoly = SubResource( 51 )
 enabled = true
 
 [node name="roundout01" type="Sprite" parent="."]
@@ -1097,11 +1115,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 64, -56, 24, -40, -8, -8, -40, 24, -56, 64, -64, 64, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="roundout01"]
-occluder = SubResource( 50 )
+occluder = SubResource( 52 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="roundout01"]
-navpoly = SubResource( 51 )
+navpoly = SubResource( 53 )
 enabled = true
 
 [node name="roundout02" type="Sprite" parent="."]
@@ -1125,11 +1143,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 64, -64, -64, -24, -56, 8, -40, 40, -8, 56, 24, 64, 64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="roundout02"]
-occluder = SubResource( 52 )
+occluder = SubResource( 54 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="roundout02"]
-navpoly = SubResource( 53 )
+navpoly = SubResource( 55 )
 enabled = true
 
 [node name="roundout03" type="Sprite" parent="."]
@@ -1153,11 +1171,11 @@ build_mode = 0
 polygon = PoolVector2Array( -64, 64, -24, 56, 8, 40, 40, 8, 56, -24, 64, -64, -64, -64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="roundout03"]
-occluder = SubResource( 54 )
+occluder = SubResource( 56 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="roundout03"]
-navpoly = SubResource( 55 )
+navpoly = SubResource( 57 )
 enabled = true
 
 [node name="roundout04" type="Sprite" parent="."]
@@ -1181,10 +1199,10 @@ build_mode = 0
 polygon = PoolVector2Array( 64, 64, 24, 56, -8, 40, -40, 8, -56, -24, -64, -64, 64, -64 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="roundout04"]
-occluder = SubResource( 56 )
+occluder = SubResource( 58 )
 light_mask = 1
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="roundout04"]
-navpoly = SubResource( 57 )
+navpoly = SubResource( 59 )
 enabled = true
 
