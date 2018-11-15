@@ -40,7 +40,7 @@ invert_border = 100.0
 bones = [  ]
 
 [node name="Light2D" type="Light2D" parent="."]
-enabled = false
+enabled = true
 editor_only = false
 texture = ExtResource( 2 )
 offset = Vector2( 0, 0 )
