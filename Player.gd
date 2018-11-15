@@ -56,17 +56,22 @@ func animation():
 	elif not is_on_floor():
 		if velocity.y < 0 :
 			$AnimationPlayer.set_current_animation("jump")
-		elif $RayLeft.is_colliding() or $RayRight.is_colliding():
+		elif $RayLeft.is_colliding() and walk_left:
+			$Sprite.scale = Vector2(-1, 1)
 			$AnimationPlayer.set_current_animation("wall")
+		elif $RayRight.is_colliding() and walk_right:
+			$Sprite.scale = Vector2(1, 1)
+			$AnimationPlayer.set_current_animation("wall")
+			pass
 		else:
 			$AnimationPlayer.set_current_animation("fall")
 	else:
 		$AnimationPlayer.set_current_animation("walk")
 	if not (walk_left or walk_right) and abs(velocity.x) > FLOORSLIDE and is_on_floor():
 		$AnimationPlayer.set_current_animation("slide")
-	if velocity.x < 0:
+	if velocity.x < -1:
 		$Sprite.scale = Vector2(-1, 1)
-	elif velocity.x > 0:
+	elif velocity.x > 1:
 		$Sprite.scale = Vector2(1, 1)
 
 
@@ -125,10 +130,12 @@ func wallslide():
 func walljump():
 	if is_wallsliding() and jump and not jumped_last_frame:
 		if $RayLeft.is_colliding():
+			velocity.y = 0
 			movement_acceleration.x += JUMP_FORCE_WALL
 			jump_acceleration.y -= JUMP_FORCE
 			jumped_last_frame = true
 		elif $RayRight.is_colliding():
+			velocity.y = 0
 			movement_acceleration.x -= JUMP_FORCE_WALL
 			jump_acceleration.y -= JUMP_FORCE
 			jumped_last_frame = true

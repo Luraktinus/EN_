@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://TileSet01.tres" type="TileSet" id=1]
-[ext_resource path="res://Enemies/TooSmartEnemy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 2180, 1540 )
@@ -32,27 +31,21 @@ tile_data = PoolIntArray( -1507362, 0, 0, -1441826, 0, 0, -1376290, 0, 0, -13107
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="TooSmartEnemy" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 259.016, -254.472 )
-
-[node name="TooSmartEnemy2" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 304.458, -306.73 )
-
-[node name="Enemy" parent="Enemies" instance=ExtResource( 3 )]
+[node name="Enemy" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 124.964, -165.861 )
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 177.222, -143.141 )
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource( 3 )]
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 195.398, -272.649 )
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource( 3 )]
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 286.281, -333.995 )
 
-[node name="Enemy5" parent="Enemies" instance=ExtResource( 3 )]
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 329.451, -181.766 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -397.676, 8.46875 )
 
