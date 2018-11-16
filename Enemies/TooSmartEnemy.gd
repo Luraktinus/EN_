@@ -16,8 +16,8 @@ var velocity = Vector2()
 
 func _physics_process(delta):
 	calc_path()
-	if path.size() > 0:
-		goto(path[0])
+	if path.size() > 1:
+		goto(path[1])
 	
 	velocity += movement * delta
 	velocity += GRAVITY * delta
@@ -43,7 +43,7 @@ func goto(goal):
 
 
 func calc_path():
-	path = navmesh.get_simple_path(position, player.position + Vector2(0, 30), true)
-	path.remove(0)
+	if is_instance_valid(player):
+		path = navmesh.get_simple_path(position, player.position + Vector2(0, 30), true)
 
 

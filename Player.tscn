@@ -1,20 +1,27 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://bttn_arrow.png" type="Texture" id=2]
+[ext_resource path="res://light.png" type="Texture" id=2]
+[ext_resource path="res://bttn_arrow.png" type="Texture" id=3]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CanvasItemMaterial" id=1]
+
+render_priority = 0
+blend_mode = 0
+light_mode = 0
+
+[sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 7.0
 height = 64.0
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 39 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
 length = 1.0
 loop = false
@@ -380,7 +387,7 @@ tracks/29/keys = {
 "values": [ -324.26 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
 length = 6.0
 loop = true
@@ -746,7 +753,7 @@ tracks/29/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
 length = 1.0
 loop = false
@@ -1112,7 +1119,7 @@ tracks/29/keys = {
 "values": [ 82.6394 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
 length = 1.0
 loop = false
@@ -1478,7 +1485,7 @@ tracks/29/keys = {
 "values": [ 82.6394, -324.26 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
 length = 1.0
 loop = false
@@ -1844,7 +1851,7 @@ tracks/29/keys = {
 "values": [ -11.5885 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
 length = 2.4
 loop = true
@@ -2210,7 +2217,7 @@ tracks/29/keys = {
 "values": [ -8.14822, 77.1976, 153.696, 118.189 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 
 length = 1.0
 loop = false
@@ -2576,22 +2583,35 @@ tracks/29/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="CanvasItemMaterial" id=11]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 0
+
+[sub_resource type="CanvasItemMaterial" id=12]
+
+render_priority = 0
+blend_mode = 0
+light_mode = 0
+
+[sub_resource type="RectangleShape2D" id=13]
 
 custom_solver_bias = 0.0
 extents = Vector2( 128, 128 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=14]
 
 custom_solver_bias = 0.0
 extents = Vector2( 128, 128 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=15]
 
 custom_solver_bias = 0.0
 extents = Vector2( 128, 128 )
 
 [node name="Player" type="KinematicBody2D"]
+material = SubResource( 1 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 521
@@ -2603,18 +2623,22 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D1" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 10, -4 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -10, -4 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -4 )
 shape = SubResource( 2 )
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -10, -4 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -4 )
+shape = SubResource( 3 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 anchor_mode = 1
 rotating = false
 current = true
@@ -2639,6 +2663,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="RayRight" type="RayCast2D" parent="."]
+visible = false
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 18, 0 )
@@ -2647,6 +2672,7 @@ collide_with_areas = true
 collide_with_bodies = true
 
 [node name="RayLeft" type="RayCast2D" parent="."]
+visible = false
 enabled = true
 exclude_parent = true
 cast_to = Vector2( -18, 0 )
@@ -2660,19 +2686,46 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.5
 playback_speed = 4.0
-anims/fall = SubResource( 3 )
-anims/idle = SubResource( 4 )
-anims/jump = SubResource( 5 )
-anims/jump-to-fall = SubResource( 6 )
-anims/slide = SubResource( 7 )
-anims/walk = SubResource( 8 )
-anims/wall = SubResource( 9 )
+anims/fall = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/jump = SubResource( 6 )
+anims/jump-to-fall = SubResource( 7 )
+anims/slide = SubResource( 8 )
+anims/walk = SubResource( 9 )
+anims/wall = SubResource( 10 )
 blend_times = [  ]
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+enabled = true
+editor_only = false
+texture = ExtResource( 2 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.2
+color = Color( 0.454902, 0.0980392, 0.466667, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
 
 [node name="Sprite" type="Node2D" parent="."]
 editor/display_folded = true
+z_index = 1
 
 [node name="Spine" type="Polygon2D" parent="Sprite"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( -0.278748, -16.8324 )
 polygon = PoolVector2Array( 0.721252, 6, -1.27875, 6, -1.27875, -36, 0.721252, -36 )
 uv = PoolVector2Array(  )
@@ -2694,6 +2747,8 @@ __meta__ = {
 }
 
 [node name="Head" type="Polygon2D" parent="Sprite/Spine"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( 0, -21 )
 rotation = -0.0175735
 polygon = PoolVector2Array( 7, -22, -9, -24, 7, -28 )
@@ -2716,12 +2771,16 @@ __meta__ = {
 }
 
 [node name="Position2D" type="Position2D" parent="Sprite/Spine/Head"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( 5, -3 )
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="LeftArm" type="Polygon2D" parent="Sprite/Spine"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( 0, -15 )
 rotation = -0.783216
 polygon = PoolVector2Array( -2, -16, -23, -15, -2, -14 )
@@ -2745,6 +2804,8 @@ __meta__ = {
 }
 
 [node name="Hand" type="Polygon2D" parent="Sprite/Spine/LeftArm"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( -20, 0 )
 rotation = -1.0472
 polygon = PoolVector2Array( -15, -16, -34, -20, -34, -12 )
@@ -2767,6 +2828,8 @@ __meta__ = {
 }
 
 [node name="Position2D" type="Position2D" parent="Sprite/Spine/LeftArm/Hand"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( -17, 0 )
 rotation = 0.716009
 __meta__ = {
@@ -2774,6 +2837,8 @@ __meta__ = {
 }
 
 [node name="RightArm" type="Polygon2D" parent="Sprite/Spine"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( 0, -15 )
 rotation = -2.47647
 polygon = PoolVector2Array( -2, -16, -23, -15, -2, -14 )
@@ -2797,6 +2862,8 @@ __meta__ = {
 }
 
 [node name="Hand" type="Polygon2D" parent="Sprite/Spine/RightArm"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( -20, 0 )
 rotation = 1.04158
 polygon = PoolVector2Array( -15, -16, -34, -20, -34, -12 )
@@ -2819,6 +2886,8 @@ __meta__ = {
 }
 
 [node name="Position2D" type="Position2D" parent="Sprite/Spine/RightArm/Hand"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( -18, -1.90735e-06 )
 rotation = 4.82779
 __meta__ = {
@@ -2826,6 +2895,8 @@ __meta__ = {
 }
 
 [node name="LeftLeg" type="Polygon2D" parent="Sprite/Spine"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( 0.278748, 20 )
 rotation = -1.20335
 polygon = PoolVector2Array( -2, 21, -21, 20, -2, 19 )
@@ -2849,6 +2920,8 @@ __meta__ = {
 }
 
 [node name="Foot" type="Polygon2D" parent="Sprite/Spine/LeftLeg"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( -19, 0 )
 rotation = 1.2072
 polygon = PoolVector2Array( -21, 20, -24, 34, -18, 34 )
@@ -2871,6 +2944,8 @@ __meta__ = {
 }
 
 [node name="Position2D" type="Position2D" parent="Sprite/Spine/LeftLeg/Foot"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( 0, 13 )
 rotation = -1.12994
 __meta__ = {
@@ -2878,6 +2953,8 @@ __meta__ = {
 }
 
 [node name="RightLeg" type="Polygon2D" parent="Sprite/Spine"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( 0.278748, 20 )
 rotation = -1.91902
 polygon = PoolVector2Array( -2, 21, -21, 20, -2, 19 )
@@ -2901,6 +2978,8 @@ __meta__ = {
 }
 
 [node name="Foot" type="Polygon2D" parent="Sprite/Spine/RightLeg"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( -19, -1.43051e-06 )
 rotation = 1.8948
 polygon = PoolVector2Array( -21.2787, 20, -24.2787, 34, -18.2787, 34 )
@@ -2923,6 +3002,8 @@ __meta__ = {
 }
 
 [node name="Position2D" type="Position2D" parent="Sprite/Spine/RightLeg/Foot"]
+light_mask = 0
+material = SubResource( 11 )
 position = Vector2( 0, 13 )
 rotation = -0.310567
 __meta__ = {
@@ -2930,39 +3011,51 @@ __meta__ = {
 }
 
 [node name="JUMP" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+light_mask = 0
+material = SubResource( 12 )
 position = Vector2( -1024, 320 )
-normal = ExtResource( 2 )
-pressed = ExtResource( 2 )
+z_index = 20
+normal = ExtResource( 3 )
+pressed = ExtResource( 3 )
 bitmask = null
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 shape_centered = true
-shape_visible = true
+shape_visible = false
 passby_press = false
 action = "ui_accept"
 visibility_mode = 1
 
 [node name="LEFT" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+light_mask = 0
+material = SubResource( 12 )
 position = Vector2( 448, 576 )
 rotation = -1.5708
-normal = ExtResource( 2 )
-pressed = ExtResource( 2 )
+z_index = 20
+normal = ExtResource( 3 )
+pressed = ExtResource( 3 )
 bitmask = null
-shape = SubResource( 11 )
+shape = SubResource( 14 )
 shape_centered = true
-shape_visible = true
+shape_visible = false
 passby_press = false
 action = "ui_left"
 visibility_mode = 1
 
 [node name="RIGHT" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+light_mask = 0
+material = SubResource( 12 )
 position = Vector2( 1027.33, 306.349 )
 rotation = 1.5708
-normal = ExtResource( 2 )
-pressed = ExtResource( 2 )
+z_index = 20
+normal = ExtResource( 3 )
+pressed = ExtResource( 3 )
 bitmask = null
-shape = SubResource( 12 )
+shape = SubResource( 15 )
 shape_centered = true
-shape_visible = true
+shape_visible = false
 passby_press = false
 action = "ui_right"
 visibility_mode = 1

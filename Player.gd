@@ -14,7 +14,6 @@ const FRICTION_FLOOR = 0.89
 const FLOORSLIDE = 20
 const WALL_FRICTION = 0.8
 
-var control = 0
 
 var movement_acceleration = Vector2()
 var jump_acceleration = Vector2()
@@ -25,7 +24,7 @@ var walk_left
 var walk_right
 
 
-func _process(delta):
+func _physics_process(delta):
 	walk_right = Input.is_action_pressed("ui_right")
 	walk_left = Input.is_action_pressed("ui_left")
 	jump = Input.is_action_pressed("ui_accept")
@@ -69,9 +68,9 @@ func animation():
 		$AnimationPlayer.set_current_animation("walk")
 	if not (walk_left or walk_right) and abs(velocity.x) > FLOORSLIDE and is_on_floor():
 		$AnimationPlayer.set_current_animation("slide")
-	if velocity.x < -1:
+	if velocity.x < -1 and walk_left:
 		$Sprite.scale = Vector2(-1, 1)
-	elif velocity.x > 1:
+	elif velocity.x > 1 and walk_right:
 		$Sprite.scale = Vector2(1, 1)
 
 

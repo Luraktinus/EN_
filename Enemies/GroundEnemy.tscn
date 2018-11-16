@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Enemies/GroundEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/HitBox.tscn" type="PackedScene" id=2]
+
+[node name="GroundEnemy" type="KinematicBody2D"]
+input_pickable = false
+collision_layer = 4
+collision_mask = 5
+collision/safe_margin = 0.08
+motion/sync_to_physics = false
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 0
+polygon = PoolVector2Array( 0, -10, -20, 10, 20, 10 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 0, -10, -20, 10, 20, 10 )
+uv = PoolVector2Array(  )
+splits = PoolIntArray(  )
+color = Color( 1, 0, 0, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+skeleton = NodePath("")
+invert_enable = false
+invert_border = 100.0
+bones = [  ]
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2( 0, -10 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( -2000, 0 )
+collision_mask = 2
+collide_with_areas = false
+collide_with_bodies = true
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2( 0, -10 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 2000, 0 )
+collision_mask = 2
+collide_with_areas = false
+collide_with_bodies = true
+
+[node name="HitBox" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+build_mode = 0
+polygon = PoolVector2Array( 0, -10, -20, 10, 20, 10 )
+

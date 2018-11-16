@@ -12,7 +12,7 @@ const JUMP_STRENGTH = 40000
 var movement = Vector2()
 var velocity = Vector2()
 
-const CD_CALC_PATH = 60
+const CD_CALC_PATH = 120
 var cd_calc_path = CD_CALC_PATH
 
 
@@ -20,16 +20,17 @@ func _ready():
 	calc_path()
 
 
-func _process(delta):
+func _physics_process(delta):
 	if cd_calc_path < 0:
 		calc_path()
 		cd_calc_path = CD_CALC_PATH + randi()%100
 	else:
 		cd_calc_path -= 1
-	if position.distance_to(path[0]) < 10:
-		calc_path()
-	if path.size() > 0:
-		goto(path[0])
+	if path.size():
+		if  position.distance_to(path[1]) < 40:
+			calc_path()
+	if path.size()>1:
+		goto(path[1])
 	
 	velocity += movement * delta
 	velocity += GRAVITY * delta
@@ -55,7 +56,7 @@ func goto(goal):
 
 
 func calc_path():
-	path = navmesh.get_simple_path(position, player.position + Vector2(0, 30), true)
-	path.remove(0)
+	if is_instance_valid(player):
+		path = navmesh.get_simple_path(position, player.position + Vector2(0, 30), true)
 
 
