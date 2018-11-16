@@ -13,10 +13,9 @@ var movement = Vector2()
 var velocity = Vector2()
 
 
-
 func _physics_process(delta):
 	calc_path()
-	if path.size() > 1:
+	if path.size()>1:
 		goto(path[1])
 	
 	velocity += movement * delta
@@ -36,7 +35,7 @@ func goto(goal):
 		movement.x = 0
 	
 	if is_on_floor() and movement.y <= 10:
-		if (is_on_wall() or abs(goal.x - position.x) < 32 or velocity.length() < 0) and goal.y < position.y:
+		if (is_on_wall() or abs(goal.x - position.x) < 20 or velocity.length() < 1) and goal.y < position.y:
 			movement.y = -JUMP_STRENGTH
 	else:
 		movement.y = 0

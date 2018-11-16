@@ -4,6 +4,7 @@ onready var player = $"../../Player"
 onready var navmesh = $"../../Navigation2D"
 
 var path = []
+var path2 = []
 
 const GRAVITY = Vector2(0, 1500)
 const SPEED = 600
@@ -12,25 +13,32 @@ const JUMP_STRENGTH = 40000
 var movement = Vector2()
 var velocity = Vector2()
 
-const CD_CALC_PATH = 120
+const CD_CALC_PATH = 200
 var cd_calc_path = CD_CALC_PATH
 
 
 func _ready():
-	calc_path()
-
+	path = calc_path(player.position)
+	if path.size():
+		path.remove(0)
 
 func _physics_process(delta):
 	if cd_calc_path < 0:
-		calc_path()
+		path = calc_path(player.position)
+		if path.size():
+			path.remove(0)
 		cd_calc_path = CD_CALC_PATH + randi()%100
 	else:
 		cd_calc_path -= 1
 	if path.size():
-		if  position.distance_to(path[1]) < 40:
-			calc_path()
-	if path.size()>1:
-		goto(path[1])
+		if position.distance_to(path[0]) < 30:
+			if path.size():
+				path.remove(0)
+	if path.size():
+		path2 = calc_path(path[0])
+	if path2.size():
+		goto(path2[1])
+	
 	
 	velocity += movement * delta
 	velocity += GRAVITY * delta
@@ -49,14 +57,14 @@ func goto(goal):
 		movement.x = 0
 	
 	if is_on_floor() and movement.y <= 10:
-		if (is_on_wall() or abs(goal.x - position.x) < 20 or velocity.length() < 1) and goal.y < position.y:
+		if (is_on_wall() or abs(goal.x - position.x) < 20 or velocity.length() < 1) and goal.y < position.y -14:
 			movement.y = -JUMP_STRENGTH
 	else:
 		movement.y = 0
 
 
-func calc_path():
+func calc_path(target_position):
 	if is_instance_valid(player):
-		path = navmesh.get_simple_path(position, player.position + Vector2(0, 30), true)
+		return navmesh.get_simple_path(position, target_position, true)
 
 
