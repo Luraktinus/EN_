@@ -14,7 +14,7 @@ const FRICTION_FLOOR = 0.89
 const FLOORSLIDE = 20
 const WALL_FRICTION = 0.8
 
-
+var alive = true
 var movement_acceleration = Vector2()
 var jump_acceleration = Vector2()
 var velocity = Vector2()
@@ -23,11 +23,12 @@ var jump
 var walk_left
 var walk_right
 
+onready var scene = "res://Levels/" + get_tree().get_current_scene().name + ".tscn"
 
 func _physics_process(delta):
-	walk_right = Input.is_action_pressed("ui_right")
-	walk_left = Input.is_action_pressed("ui_left")
-	jump = Input.is_action_pressed("ui_accept")
+	walk_right = Input.is_action_pressed("ui_right") and alive
+	walk_left = Input.is_action_pressed("ui_left") and alive
+	jump = Input.is_action_pressed("ui_accept") and alive
 	
 	animation()
 	walk()
@@ -43,7 +44,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	if lenvelocity/(delta+0.0000000001)/60 > velocity.length()/(delta+0.0000000001)/60 + 1500:
-		get_tree().change_scene("Levels/" + get_tree().get_current_scene().name+".tscn")
+		death()
 
 
 func animation():
@@ -147,3 +148,15 @@ func _input(event):
 	if event is InputEventKey and event.is_pressed():
 		if event.get_scancode() == KEY_ESCAPE:
 			get_tree().quit()
+
+
+func _on_DeathTimer_timeout():#
+	
+	get_tree().change_scene(scene)
+	
+func death():
+	print("death")
+	alive = false
+	$DeathSign.visible = true
+	$Sprite.visible = false
+	$DeathTimer.start()

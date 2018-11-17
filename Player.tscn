@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://light.png" type="Texture" id=2]
 [ext_resource path="res://bttn_arrow.png" type="Texture" id=3]
+[ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -2610,8 +2611,18 @@ extents = Vector2( 128, 128 )
 custom_solver_bias = 0.0
 extents = Vector2( 128, 128 )
 
+[sub_resource type="DynamicFont" id=16]
+
+size = 58
+outline_size = 5
+outline_color = Color( 1, 0, 0, 1 )
+use_mipmaps = false
+use_filter = true
+font_data = ExtResource( 4 )
+
 [node name="Player" type="KinematicBody2D"]
 material = SubResource( 1 )
+z_index = 4
 input_pickable = false
 collision_layer = 2
 collision_mask = 521
@@ -3060,3 +3071,35 @@ passby_press = false
 action = "ui_right"
 visibility_mode = 1
 
+[node name="DeathTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="DeathSign" type="Label" parent="."]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -256.0
+margin_top = -192.0
+margin_right = 256.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 16 )
+text = "TRY AGAIN"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]

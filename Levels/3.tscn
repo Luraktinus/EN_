@@ -46,7 +46,6 @@ scale = Vector2( 13.375, 8.875 )
 texture = ExtResource( 2 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
-visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 1 )
@@ -58,23 +57,44 @@ script = ExtResource( 3 )
 [node name="Enemy" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 192, -240 )
 
+[node name="Enemy11" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 196.101, -272.809 )
+
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 224, -192 )
+
+[node name="Enemy10" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 228.101, -224.809 )
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 256, -252 )
 
+[node name="Enemy9" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 260.101, -284.809 )
+
 [node name="Enemy4" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 144, -208 )
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 148.101, -240.809 )
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 156, -304 )
 
+[node name="Enemy12" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 160.101, -336.809 )
+
 [node name="Enemy6" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 268, -352 )
 
+[node name="Enemy13" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 272.101, -384.809 )
+
 [node name="Enemy7" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 304, -144 )
+
+[node name="Enemy14" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 308.101, -176.809 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -112, 64 )
