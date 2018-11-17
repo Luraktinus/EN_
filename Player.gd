@@ -156,7 +156,9 @@ func _on_DeathTimer_timeout():#
 	
 func death():
 	print("death")
+	if alive:
+		$DeathTimer.start()
 	alive = false
 	$DeathSign.visible = true
 	$Sprite.visible = false
-	$DeathTimer.start()
+	
