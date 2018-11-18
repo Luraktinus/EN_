@@ -253,7 +253,7 @@ tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -19, -1.43051e-06 ) ]
+"values": [ Vector2( -19, -1.43051e-006 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("Sprite/Spine/RightLeg/Foot:rotation_degrees")
@@ -373,7 +373,7 @@ tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -18, -1.90735e-06 ) ]
+"values": [ Vector2( -18, -1.90735e-006 ) ]
 }
 tracks/29/type = "value"
 tracks/29/path = NodePath("Sprite/Spine/RightArm/Hand/Position2D:rotation_degrees")
@@ -595,7 +595,7 @@ tracks/16/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -19, -1.43051e-06 ), Vector2( -19, -1.43051e-06 ) ]
+"values": [ Vector2( -19, -1.43051e-006 ), Vector2( -19, -1.43051e-006 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Sprite/Spine/RightLeg/Foot:rotation_degrees")
@@ -667,7 +667,7 @@ tracks/22/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -18, -1.90735e-06 ), Vector2( -18, -1.90735e-06 ) ]
+"values": [ Vector2( -18, -1.90735e-006 ), Vector2( -18, -1.90735e-006 ) ]
 }
 tracks/23/type = "value"
 tracks/23/path = NodePath("Sprite/Spine/RightArm/Hand/Position2D:rotation_degrees")
@@ -985,7 +985,7 @@ tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -19, -1.43051e-06 ) ]
+"values": [ Vector2( -19, -1.43051e-006 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("Sprite/Spine/RightLeg/Foot:rotation_degrees")
@@ -1105,7 +1105,7 @@ tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -18, -1.90735e-06 ) ]
+"values": [ Vector2( -18, -1.90735e-006 ) ]
 }
 tracks/29/type = "value"
 tracks/29/path = NodePath("Sprite/Spine/RightArm/Hand/Position2D:rotation_degrees")
@@ -1351,7 +1351,7 @@ tracks/18/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -19, -1.43051e-06 ), Vector2( -19, -1.43051e-06 ) ]
+"values": [ Vector2( -19, -1.43051e-006 ), Vector2( -19, -1.43051e-006 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("Sprite/Spine/RightLeg/Foot:rotation_degrees")
@@ -1471,7 +1471,7 @@ tracks/28/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -18, -1.90735e-06 ), Vector2( -18, -1.90735e-06 ) ]
+"values": [ Vector2( -18, -1.90735e-006 ), Vector2( -18, -1.90735e-006 ) ]
 }
 tracks/29/type = "value"
 tracks/29/path = NodePath("Sprite/Spine/RightArm/Hand/Position2D:rotation_degrees")
@@ -1717,7 +1717,7 @@ tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -19, -1.43051e-06 ) ]
+"values": [ Vector2( -19, -1.43051e-006 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("Sprite/Spine/RightLeg/Foot:rotation_degrees")
@@ -1765,7 +1765,7 @@ tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -18, -1.90735e-06 ) ]
+"values": [ Vector2( -18, -1.90735e-006 ) ]
 }
 tracks/23/type = "value"
 tracks/23/path = NodePath("Sprite/Spine/RightArm/Hand/Position2D:rotation_degrees")
@@ -2035,7 +2035,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0, 0.6, 1.2, 1.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -18, -1.90735e-06 ), Vector2( -18, -1.90735e-06 ), Vector2( -18, -1.90735e-06 ), Vector2( -18, -1.90735e-06 ) ]
+"values": [ Vector2( -18, -1.90735e-006 ), Vector2( -18, -1.90735e-006 ), Vector2( -18, -1.90735e-006 ), Vector2( -18, -1.90735e-006 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Sprite/Spine/RightArm/Hand/Position2D:rotation_degrees")
@@ -2107,7 +2107,7 @@ tracks/20/keys = {
 "times": PoolRealArray( 0, 0.6, 1.2, 1.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -19, -1.43051e-06 ), Vector2( -19, -1.43051e-06 ), Vector2( -19, -1.43051e-06 ), Vector2( -19, -1.43051e-06 ) ]
+"values": [ Vector2( -19, -1.43051e-006 ), Vector2( -19, -1.43051e-006 ), Vector2( -19, -1.43051e-006 ), Vector2( -19, -1.43051e-006 ) ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Sprite/Spine/RightLeg/Foot:rotation_degrees")
@@ -2353,7 +2353,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -19, -1.43051e-06 ) ]
+"values": [ Vector2( -19, -1.43051e-006 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Sprite/Spine/RightLeg/Foot:rotation_degrees")
@@ -2401,7 +2401,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -18, -1.90735e-06 ) ]
+"values": [ Vector2( -18, -1.90735e-006 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Sprite/Spine/RightArm/Hand/Position2D:rotation_degrees")
@@ -2899,7 +2899,7 @@ __meta__ = {
 [node name="Position2D" type="Position2D" parent="Sprite/Spine/RightArm/Hand"]
 light_mask = 0
 material = SubResource( 11 )
-position = Vector2( -18, -1.90735e-06 )
+position = Vector2( -18, -1.90735e-006 )
 rotation = 4.82779
 __meta__ = {
 "_edit_bone_": true
@@ -2991,7 +2991,7 @@ __meta__ = {
 [node name="Foot" type="Polygon2D" parent="Sprite/Spine/RightLeg"]
 light_mask = 0
 material = SubResource( 11 )
-position = Vector2( -19, -1.43051e-06 )
+position = Vector2( -19, -1.43051e-006 )
 rotation = 1.8948
 polygon = PoolVector2Array( -21.2787, 20, -24.2787, 34, -18.2787, 34 )
 uv = PoolVector2Array(  )
