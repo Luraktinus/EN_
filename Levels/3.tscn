@@ -56,6 +56,7 @@ navpoly = SubResource( 1 )
 enabled = true
 
 [node name="Enemies" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 3 )]
 position = Vector2( 142.961, -159.78 )
