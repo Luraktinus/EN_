@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://TileSetSimpleNav_2.0.tres" type="TileSet" id=1]
 [ext_resource path="res://bg.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Enemies/GroundEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Switch.tscn" type="PackedScene" id=8]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -89,16 +90,16 @@ position = Vector2( 285.922, -290.126 )
 position = Vector2( 185.008, -277.512 )
 
 [node name="Mine" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -1332.24, 17.7042 )
+position = Vector2( -1328, 48 )
 
 [node name="Mine2" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -1330.94, -4.26575 )
+position = Vector2( -1328, 16 )
 
 [node name="Mine3" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -1332.24, -24.9434 )
+position = Vector2( -1328, 32 )
 
 [node name="Mine4" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -1329.65, -48.2057 )
+position = Vector2( -1328, -1.14441e-05 )
 
 [node name="GroundEnemy" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( -1677.69, 303.582 )
@@ -108,4 +109,9 @@ position = Vector2( 144, -560 )
 
 [node name="Goal" parent="." instance=ExtResource( 7 )]
 position = Vector2( -1392, -16 )
+
+[node name="Switches" type="Node2D" parent="."]
+
+[node name="Switch" parent="Switches" instance=ExtResource( 8 )]
+position = Vector2( -2016, -800 )
 
