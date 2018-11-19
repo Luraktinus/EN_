@@ -14,6 +14,10 @@ const FRICTION_FLOOR = 0.89
 const FLOORSLIDE = 20
 const WALL_FRICTION = 0.8
 
+onready var scene = "res://Levels/" + get_tree().get_current_scene().name + ".tscn"
+
+
+
 var alive = true
 var movement_acceleration = Vector2()
 var jump_acceleration = Vector2()
@@ -23,12 +27,12 @@ var jump
 var walk_left
 var walk_right
 
-onready var scene = "res://Levels/" + get_tree().get_current_scene().name + ".tscn"
+
 
 func _physics_process(delta):
 	walk_right = Input.is_action_pressed("ui_right") and alive
 	walk_left = Input.is_action_pressed("ui_left") and alive
-	jump = Input.is_action_pressed("ui_accept") and alive
+	jump = Input.is_action_pressed("ui_up") and alive
 	
 	animation()
 	walk()
@@ -150,15 +154,13 @@ func _input(event):
 			get_tree().quit()
 
 
-func _on_DeathTimer_timeout():#
-	
+func _on_DeathTimer_timeout():
 	get_tree().change_scene(scene)
 	
 func death():
-	print("death")
+	print("Death")
 	if alive:
 		$DeathTimer.start()
 	alive = false
 	$DeathSign.visible = true
 	$Sprite.visible = false
-	

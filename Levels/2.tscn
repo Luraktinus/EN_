@@ -1,14 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TileSetSimpleNav.tres" type="TileSet" id=3]
+[ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="NavigationPolygon" id=1]
 
 vertices = PoolVector2Array( 1280, 128, 256, 128, 256, -256, 1280, -256 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 outlines = [ PoolVector2Array( 1280, -256, 256, -256, 256, 128, 1280, 128 ) ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 38
+outline_size = 1
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = true
+font_data = ExtResource( 4 )
 
 [node name="2" type="Node2D"]
 
@@ -51,4 +61,27 @@ visible = false
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 1 )
 enabled = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 270.0
+margin_top = -240.0
+margin_right = 941.0
+margin_bottom = -204.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Welcome to EN_ ! You are an experiment...
+Your GOAL is to  make it out of this facility.
+If you fail, we send you a new body..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
