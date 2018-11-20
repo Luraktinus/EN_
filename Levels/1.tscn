@@ -78,9 +78,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
-text = "Welcome to EN_ ! You are an EXPERIMENT.
-Your GOAL is to  make it out of this facility.
-If you die, we send a new BODY."
+text = "Welcome to EN_ Corp!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

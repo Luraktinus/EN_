@@ -92,13 +92,15 @@ text = "Story;
 	You are an experimental creature. 
 	Your goal is to make it to the next room and out of this facility.
 	The red figures are poisoned and kill you instantly.
+	Circles are the switches that open the door. Enable all of them.
+	
 
 How to Play;
-	Walk left by pressing [A] or [Left Button]
-	Walk right by pressing [D] or [Right Button]
-	Jump by pressing [W] or [Up Button]
-
-
+	Walk left by pressing [A] or [Left Button].
+	Walk right by pressing [D] or [Right Button].
+	Jump by pressing [W] or [Up Button].
+	Walljump by pressing against the wall and press jump.
+	Slow down, if you hit a wall to fast, you die instantly.
 
 
 
@@ -227,7 +229,7 @@ breakpoint_gutter = false
 highlight_all_occurrences = false
 override_selected_font_color = false
 context_menu_enabled = true
-smooth_scrolling = false
+smooth_scrolling = true
 v_scroll_speed = 80.0
 hiding_enabled = 0
 wrap_enabled = true

@@ -5,7 +5,7 @@
 [ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Music/01_Dreamstate.ogg" type="AudioStream" id=4]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 size = 38
 outline_size = 1
@@ -55,7 +55,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "YOU MADE IT, GOOD JOB!
 MORE COMING SOON..."
 percent_visible = 1.0

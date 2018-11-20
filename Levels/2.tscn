@@ -118,8 +118,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
-text = "RED are the ENEMIES,
-CIRCLES are the SWITCHES"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -141,7 +139,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
 text = "If you fall to fast, you die.
-Press to the WALL to slow down and JUMP"
+"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
