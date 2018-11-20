@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/05_Rattlefox.ogg-b3974c3986d9156b00a885728d22797c.oggstr"
+
+[deps]
+
+source_file="res://Music/05_Rattlefox.ogg"
+dest_files=[ "res://.import/05_Rattlefox.ogg-b3974c3986d9156b00a885728d22797c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

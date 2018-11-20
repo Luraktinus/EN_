@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/03_Majesty.ogg-2dc3ad4666421730588f8cf2d6988bdb.oggstr"
+
+[deps]
+
+source_file="res://Music/03_Majesty.ogg"
+dest_files=[ "res://.import/03_Majesty.ogg-2dc3ad4666421730588f8cf2d6988bdb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

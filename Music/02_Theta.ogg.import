@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/02_Theta.ogg-0d494f8ac7742a1bd7584be48c29e408.oggstr"
+
+[deps]
+
+source_file="res://Music/02_Theta.ogg"
+dest_files=[ "res://.import/02_Theta.ogg-0d494f8ac7742a1bd7584be48c29e408.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

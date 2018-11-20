@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://TileSetSimpleNav_2.0.tres" type="TileSet" id=1]
 [ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Mine.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Music/04_Cathedral_1.ogg" type="AudioStream" id=6]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -192,4 +193,13 @@ position = Vector2( 1455.28, -832 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 320, 832 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+stream_paused = false
+mix_target = 0
+bus = "Master"
 

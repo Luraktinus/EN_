@@ -1,7 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://LevelMenu.gd" type="Script" id=1]
 [ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 28
+outline_size = 1
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends Button
+
+
+
+func _on_Button_pressed():
+	get_tree().change_scene(\"res://Menu.tscn\")
+"
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -37,12 +56,35 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
+[node name="Button" type="Button" parent="Panel"]
+anchor_left = 0.0
+anchor_top = 0.9
+anchor_right = 0.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "BACK"
+flat = false
+align = 1
+script = SubResource( 3 )
+
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_right = 21.0
+margin_bottom = -70.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -735,6 +777,7 @@ text = "25"
 flat = false
 align = 1
 
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_Button_pressed"]
 [connection signal="pressed" from="ScrollContainer/GridContainer/Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="ScrollContainer/GridContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="ScrollContainer/GridContainer/Button3" to="." method="_on_Button3_pressed"]
