@@ -47,7 +47,7 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	if lenvelocity/(delta+0.0000000001)/60 > velocity.length()/(delta+0.0000000001)/60 + 1500: # 12 blocks ded
+	if lenvelocity/(delta+0.0000000001)/60 > velocity.length()/(delta+0.0000000001)/60 + 1500: # 12 blocks dead
 		death()
 
 

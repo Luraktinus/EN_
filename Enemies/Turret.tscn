@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Enemies/Turret.gd" type="Script" id=1]
+
+[node name="Turret" type="Node2D"]
+script = ExtResource( 1 )
+max_rockets = 2
+cooldown = 120
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 8, -16, -8, -16, -16, -8, -16, 8, -8, 16, 8, 16, 16, 8, 16, -8 )
+uv = PoolVector2Array(  )
+splits = PoolIntArray(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+skeleton = NodePath("")
+invert_enable = false
+invert_border = 100.0
+bones = [  ]
+
+[node name="Polygon2D" type="Polygon2D" parent="Polygon2D"]
+polygon = PoolVector2Array( -8, -8, -8, 8, 8, 8, 8, -8 )
+uv = PoolVector2Array(  )
+splits = PoolIntArray(  )
+color = Color( 1, 0, 0, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+skeleton = NodePath("")
+invert_enable = false
+invert_border = 100.0
+bones = [  ]
+
+[node name="Ray" type="RayCast2D" parent="."]
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 50 )
+collision_mask = 1
+collide_with_areas = true
+collide_with_bodies = true
+
