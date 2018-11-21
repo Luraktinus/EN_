@@ -4,7 +4,7 @@ onready var goal = $"../../Goal"
 var on = false
 
 func _ready():
-	goal.switch_count += 1
+	goal.switch_login()
 	print("Switch count: "+str(goal.switch_count))
 
 func seton():
@@ -12,7 +12,7 @@ func seton():
 		$SpriteON.visible = true
 		$SpriteOFF.visible = false
 		on = true
-		goal.switch_count -= 1
+		goal.switch_activated()
 		print("Switch count: " + str(goal.switch_count))
 
 

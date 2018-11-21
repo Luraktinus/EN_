@@ -3,6 +3,7 @@ extends Area2D
 onready var scene = "res://Levels/" + str(int(get_tree().get_current_scene().name) + 1) + ".tscn"
 onready var player = $"../Player"
 
+
 var savegame = File.new() #file
 var save_path = "user://level.save" #place of the file
 var save_data = {"level": scene} #variable to store data
@@ -10,8 +11,16 @@ var next_level = ""
 
 var switch_count = 0
 
+	
 
+func switch_login():
+	switch_count += 1
+	$Sprite.modulate = Color(1,1,1,0.2)
 
+func switch_activated():
+	switch_count -= 1
+	if switch_count == 0:
+		$Sprite.modulate = Color(1,1,1,1)
 
 func _on_Goal_body_entered(body):
 	if player.alive and switch_count <= 0:

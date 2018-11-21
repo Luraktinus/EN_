@@ -40,14 +40,14 @@ func _physics_process(delta):
 	jump()
 	wallslide()
 	walljump()
-	
+	var lenvelocity = velocity.length()
 	velocity.y += GRAVITY * delta
 	velocity += movement_acceleration * delta
 	velocity += jump_acceleration * delta
-	var lenvelocity = velocity.length()
+	
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	if lenvelocity/(delta+0.0000000001)/60 > velocity.length()/(delta+0.0000000001)/60 + 1500:
+	if lenvelocity/(delta+0.0000000001)/60 > velocity.length()/(delta+0.0000000001)/60 + 1500: # 12 blocks ded
 		death()
 
 
@@ -151,7 +151,7 @@ func walljump():
 func _input(event):
 	if event is InputEventKey and event.is_pressed():
 		if event.get_scancode() == KEY_ESCAPE:
-			get_tree().quit()
+			get_tree().change_scene("res://Menu.tscn")
 
 
 func _on_DeathTimer_timeout():

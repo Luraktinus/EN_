@@ -7,7 +7,7 @@
 [ext_resource path="res://Enemies/Mine.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Switch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://Music/01_Dreamstate.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Music/06_Triton.ogg" type="AudioStream" id=8]
 
 [sub_resource type="NavigationPolygon" id=1]
 

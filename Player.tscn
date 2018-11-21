@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://light.png" type="Texture" id=2]
 [ext_resource path="res://bttn_arrow.png" type="Texture" id=3]
-[ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://exit.png" type="Texture" id=4]
+[ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -2611,14 +2612,24 @@ extents = Vector2( 128, 128 )
 custom_solver_bias = 0.0
 extents = Vector2( 128, 128 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="GDScript" id=16]
+
+script/source = "extends TouchScreenButton
+
+
+
+func _on_Exit_pressed():
+	get_tree().change_scene(\"res://Menu.tscn\")
+"
+
+[sub_resource type="DynamicFont" id=17]
 
 size = 70
 outline_size = 2
 outline_color = Color( 1, 0, 0, 1 )
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [node name="Player" type="KinematicBody2D"]
 material = SubResource( 1 )
@@ -2649,7 +2660,6 @@ position = Vector2( 0, -4 )
 shape = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 anchor_mode = 1
 rotating = false
 current = true
@@ -3071,6 +3081,24 @@ passby_press = false
 action = "ui_right"
 visibility_mode = 1
 
+[node name="Exit" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+light_mask = 0
+material = SubResource( 12 )
+position = Vector2( -1025.94, -602.657 )
+scale = Vector2( 0.6, 0.6 )
+z_index = 20
+normal = ExtResource( 4 )
+pressed = null
+bitmask = null
+shape = SubResource( 15 )
+shape_centered = true
+shape_visible = false
+passby_press = false
+action = ""
+visibility_mode = 1
+script = SubResource( 16 )
+
 [node name="DeathTimer" type="Timer" parent="."]
 process_mode = 1
 wait_time = 3.0
@@ -3094,7 +3122,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
 text = "TRY AGAIN"
 align = 1
 valign = 1
@@ -3102,4 +3130,5 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[connection signal="pressed" from="Exit" to="Exit" method="_on_Exit_pressed"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]

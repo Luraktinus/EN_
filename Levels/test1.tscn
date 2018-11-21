@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileSetSimpleNav.tres" type="TileSet" id=3]
+[ext_resource path="res://Switch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Music/01_Dreamstate.ogg" type="AudioStream" id=6]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( 1280, 128, 256, 128, 256, -256, 1280, -256 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 1280, -256, 256, -256, 256, 128, 1280, 128 ) ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 38
+outline_size = 1
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = true
+font_data = ExtResource( 5 )
+
+[node name="0" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 576, 64 )
+z_index = 5
+
+[node name="Goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1240, 80 )
+z_index = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 65577, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131113, 0, 0, 196646, 0, 0, 196649, 0, 0, 262178, 0, 0, 262182, 0, 0, 262185, 0, 0, 327710, 0, 0, 327714, 0, 0, 327718, 0, 0, 327721, 0, 0, 393242, 0, 0, 393246, 0, 0, 393250, 0, 0, 393254, 0, 0, 393257, 0, 0, 458774, 0, 0, 458778, 0, 0, 458782, 0, 0, 458786, 0, 0, 458790, 0, 0, 458793, 0, 0, 524310, 0, 0, 524314, 0, 0, 524318, 0, 0, 524322, 0, 0, 524326, 0, 0, 524329, 0, 0, 589846, 0, 0, 589850, 0, 0, 589854, 0, 0, 589858, 0, 0, 589862, 0, 0, 589865, 0, 0, 655382, 0, 0, 655386, 0, 0, 655390, 0, 0, 655394, 0, 0, 655398, 0, 0, 655401, 0, 0, 720918, 0, 0, 720922, 0, 0, 720926, 0, 0, 720930, 0, 0, 720934, 0, 0, 720937, 0, 0, 786454, 0, 0, 786458, 0, 0, 786462, 0, 0, 786466, 0, 0, 786470, 0, 0, 786473, 0, 0, 851990, 0, 0, 851994, 0, 0, 851998, 0, 0, 852002, 0, 0, 852006, 0, 0, 852009, 0, 0, 917526, 0, 0, 917530, 0, 0, 917534, 0, 0, 917538, 0, 0, 917542, 0, 0, 917545, 0, 0, 983062, 0, 0, 983066, 0, 0, 983070, 0, 0, 983074, 0, 0, 983078, 0, 0, 983081, 0, 0, 1048598, 0, 0, 1048602, 0, 0, 1048606, 0, 0, 1048610, 0, 0, 1048614, 0, 0, 1048617, 0, 0, 1114134, 0, 0, 1114138, 0, 0, 1114142, 0, 0, 1114146, 0, 0, 1114150, 0, 0, 1114153, 0, 0, 1179670, 0, 0, 1179674, 0, 0, 1179678, 0, 0, 1179682, 0, 0, 1179686, 0, 0, 1179689, 0, 0, 1310714, 0, 0, 1310715, 0, 0, 1310716, 0, 0, 1310717, 0, 0, 1310718, 0, 0, 1310719, 0, 0, 1245184, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1245209, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245213, 0, 0, 1245214, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1245220, 0, 0, 1245221, 0, 0, 1245222, 0, 0, 1245223, 0, 0, 1245224, 0, 0, 1245225, 0, 0, 2228227, 0, 0, 2228228, 0, 0, 2228229, 0, 0, 2228230, 0, 0, 2228231, 0, 0, 2228232, 0, 0, 2228233, 0, 0, 2228234, 0, 0, 2228235, 0, 0, 2228236, 0, 0, 2228237, 0, 0, 2228238, 0, 0, 2228239, 0, 0, 2228240, 0, 0, 2228241, 0, 0, 2228242, 0, 0, 2228243, 0, 0, 2228244, 0, 0, 2228245, 0, 0, 2228246, 0, 0, 2228247, 0, 0, 2228248, 0, 0, 2228249, 0, 0, 2228250, 0, 0, 2228251, 0, 0, 2228252, 0, 0, 2228253, 0, 0, 2228254, 0, 0, 2228255, 0, 0, 2228256, 0, 0, 2293777, 0, 0, 2293778, 0, 0, 2293779, 0, 0, 2293780, 0, 0, 2293781, 0, 0, 2293782, 0, 0, 2293783, 0, 0, 2293784, 0, 0, 2293785, 0, 0, 2293792, 0, 0, 2293793, 0, 0, 2293794, 0, 0, 2293795, 0, 0, 2293796, 0, 0, 2293797, 0, 0, 2293798, 0, 0, 2293799, 0, 0, 2293800, 0, 0, 2293801, 0, 0, 2293802, 0, 0, 2293803, 0, 0, 2293804, 0, 0, 2293805, 0, 0, 2293806, 0, 0, 2293807, 0, 0, 2293808, 0, 0, 2293809, 0, 0, 2293810, 0, 0, 2293811, 0, 0, 2293812, 0, 0, 2293813, 0, 0, 2293814, 0, 0, 2293815, 0, 0, 2293816, 0, 0, 2293817, 0, 0, 2293818, 0, 0, 2293819, 0, 0, 2293820, 0, 0, 2293821, 0, 0, 2293822, 0, 0, 2293823, 0, 0, 2293824, 0, 0, 2293825, 0, 0, 2293826, 0, 0, 2293827, 0, 0, 2293828, 0, 0, 2293829, 0, 0, 2293830, 0, 0, 2293831, 0, 0, 2293832, 0, 0, 2293833, 0, 0, 2293834, 0, 0, 2293835, 0, 0, 2293836, 0, 0, 2293837, 0, 0, 2293838, 0, 0 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Switches" type="Node2D" parent="."]
+
+[node name="Switch" parent="Switches" instance=ExtResource( 4 )]
+position = Vector2( 1248, -160 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
+enabled = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 270.0
+margin_top = -240.0
+margin_right = 941.0
+margin_bottom = -204.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "THIS IS A TEMPLATE LEVEL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+stream_paused = false
+mix_target = 0
+bus = "Master"
+
