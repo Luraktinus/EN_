@@ -3101,7 +3101,7 @@ script = SubResource( 16 )
 
 [node name="DeathTimer" type="Timer" parent="."]
 process_mode = 1
-wait_time = 3.0
+wait_time = 2.0
 one_shot = false
 autostart = false
 

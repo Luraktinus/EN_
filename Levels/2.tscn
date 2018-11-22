@@ -118,6 +118,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
+text = "RED are the ENEMIES, 
+DONT TOUCH THEM"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -138,8 +140,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
-text = "If you fall to fast, you die.
-"
+text = "If you fall to FAST, you DIE.
+Press to the WALL to SLOW DOWN."
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

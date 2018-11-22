@@ -59,12 +59,6 @@ enabled = true
 [node name="Enemy" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 2032, 128 )
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 2032, 160 )
-
-[node name="Enemy3" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 2032, 96 )
-
 [node name="Mines" type="Node2D" parent="."]
 
 [node name="Mine" parent="Mines" instance=ExtResource( 3 )]
