@@ -23,23 +23,25 @@ func _ready():
 		path.remove(0)
 
 func _physics_process(delta):
-	if cd_calc_path < 0:
-		path = calc_path(player.position)
-		if path.size():
-			path.remove(0)
-		cd_calc_path = CD_CALC_PATH + randi()%60
-	else:
-		cd_calc_path -= 1
-	if path.size():
-		if position.distance_to(path[0]) < 30:
-			if path.size():
-				path.remove(0)
-	if path.size() == 1:
-		path2 = calc_path(player.position)
-	elif path.size():
-		path2 = calc_path(path[0])
-	if path2.size():
-		goto(path2[1])
+#	if cd_calc_path < 0:
+#		path = calc_path(player.position)
+#		if path.size():
+#			path.remove(0)
+#		cd_calc_path = CD_CALC_PATH + randi()%60
+#	else:
+#		cd_calc_path -= 1
+#	if path.size():
+#		if position.distance_to(path[0]) < 30:
+#			if path.size():
+#				path.remove(0)
+#	if path.size() == 1:
+#		path2 = calc_path(player.position)
+#	elif path.size():
+#		path2 = calc_path(path[0])
+#	if path2.size():
+#		goto(path2[1])
+	
+	goto(calc_path(player.position)[1])
 	
 	
 	velocity += movement * delta

@@ -57,7 +57,7 @@ enabled = true
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 2032, 128 )
+position = Vector2( 1872, 144 )
 
 [node name="Mines" type="Node2D" parent="."]
 
