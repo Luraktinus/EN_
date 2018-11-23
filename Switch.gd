@@ -14,6 +14,7 @@ func seton():
 		on = true
 		goal.switch_activated()
 		print("Switch count: " + str(goal.switch_count))
+		$AudioOn.play()
 
 
 func _on_Switch_body_entered(body):

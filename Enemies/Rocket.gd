@@ -16,6 +16,7 @@ var cd_calc_path = CD_CALC_PATH + randi() % 60
 
 func _ready():
 	rotation = position.angle_to(player.position)
+	
 
 func _physics_process(delta):
 	goto(player.position)

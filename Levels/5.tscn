@@ -24,7 +24,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 384, 1984 )
+position = Vector2( 1510, 3051.35 )
 z_index = 5
 
 [node name="Goal" parent="." instance=ExtResource( 2 )]
@@ -76,8 +76,8 @@ max_rockets = 1
 
 [node name="Turret4" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 3520, 2432 )
-max_rockets = 20
-cooldown = 15
+max_rockets = 6
+cooldown = 60
 
 [node name="Switches" type="Node2D" parent="."]
 

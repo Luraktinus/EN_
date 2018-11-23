@@ -35,7 +35,9 @@ func shoot():
 	rocket.connect("exploded", self, "rocket_exploded")
 	get_parent().add_child(rocket)
 	rocket_count += 1
+	$AudioTracked.play()
 
 
 func rocket_exploded():
 	rocket_count -= 1
+	$AudioExploded.play()

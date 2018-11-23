@@ -104,6 +104,7 @@ func friction():
 func jump():
 	if jump:
 		if is_on_floor() and not jumped_last_frame:
+			$Audio/jump.play()
 			jump_acceleration.y -= JUMP_FORCE
 			jumped_last_frame = true
 		if not is_on_floor() and jumped_last_frame:
@@ -134,11 +135,13 @@ func wallslide():
 func walljump():
 	if is_wallsliding() and jump and not jumped_last_frame:
 		if $RayLeft.is_colliding():
+			$Audio/jump.play()
 			velocity.y = 0
 			movement_acceleration.x += JUMP_FORCE_WALL
 			jump_acceleration.y -= JUMP_FORCE
 			jumped_last_frame = true
 		elif $RayRight.is_colliding():
+			$Audio/jump.play()
 			velocity.y = 0
 			movement_acceleration.x -= JUMP_FORCE_WALL
 			jump_acceleration.y -= JUMP_FORCE
@@ -161,6 +164,7 @@ func death():
 	print("Death")
 	if alive:
 		$DeathTimer.start()
+		$Audio/player_die.play()
 	alive = false
 	$DeathSign.visible = true
 	$Sprite.visible = false

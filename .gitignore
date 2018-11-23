@@ -203,3 +203,16 @@ Music/08_Good_Bye_Prairie.ogg.import
 .import/exit.png-624dd767c5130df8d06e0716559d47a5.md5
 .import/exit.png-624dd767c5130df8d06e0716559d47a5.stex
 exit.png.import
+.import/turret_alert.wav-478349a483f1475158b52e3bf1acdc19.sample
+.import/turret_alert.wav-478349a483f1475158b52e3bf1acdc19.md5
+.import/player_die.wav-233d7a7944fe200b5a7d7f34a670b2df.sample
+.import/player_die.wav-233d7a7944fe200b5a7d7f34a670b2df.md5
+.import/jump.wav-81b67a307a1849f1bf4887af4439406d.sample
+.import/jump.wav-81b67a307a1849f1bf4887af4439406d.md5
+.import/explode.wav-5e19cc0665114bdd3618a53da0143112.sample
+.import/explode.wav-5e19cc0665114bdd3618a53da0143112.md5
+.import/door_open.wav-81818e34f207087927ec84cde7eb3b7d.sample
+.import/door_open.wav-81818e34f207087927ec84cde7eb3b7d.md5
+.import/button.wav-1bb07eb80a820326c8fc0f60808d48e8.sample
+.import/button.wav-1bb07eb80a820326c8fc0f60808d48e8.md5
+*.import

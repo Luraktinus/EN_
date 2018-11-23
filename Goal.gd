@@ -21,6 +21,7 @@ func switch_activated():
 	switch_count -= 1
 	if switch_count == 0:
 		$Sprite.modulate = Color(1,1,1,1)
+		$AudioOpen.play()
 
 func _on_Goal_body_entered(body):
 	if player.alive and switch_count <= 0:

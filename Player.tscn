@@ -1,10 +1,12 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://light.png" type="Texture" id=2]
 [ext_resource path="res://bttn_arrow.png" type="Texture" id=3]
 [ext_resource path="res://exit.png" type="Texture" id=4]
 [ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sounds/player_die.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/jump.wav" type="AudioStream" id=7]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -3101,7 +3103,7 @@ script = SubResource( 16 )
 
 [node name="DeathTimer" type="Timer" parent="."]
 process_mode = 1
-wait_time = 2.0
+wait_time = 1.0
 one_shot = false
 autostart = false
 
@@ -3129,6 +3131,26 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="player_die" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+stream_paused = false
+mix_target = 0
+bus = "Master"
+
+[node name="jump" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+stream_paused = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="pressed" from="Exit" to="Exit" method="_on_Exit_pressed"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
