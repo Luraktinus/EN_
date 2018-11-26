@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-onready var player = $"../../Player"
+onready var root = str(get_tree().get_current_scene().name)
+onready var player = get_node("/root/"+root+"/Player")
 
 signal exploded
 

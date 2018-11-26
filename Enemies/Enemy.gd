@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-onready var player = $"../../Player"
-onready var navmesh = $"../../Navigation2D"
+onready var root = str(get_tree().get_current_scene().name)
+onready var player = get_node("/root/"+root+"/Player")
+onready var navmesh = get_node("/root/"+root+"/Navigation2D")
 
 var path = []
 var path2 = []

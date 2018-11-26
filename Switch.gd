@@ -1,6 +1,8 @@
 extends Area2D
 
-onready var goal = $"../../Goal"
+onready var root = str(get_tree().get_current_scene().name)
+onready var goal = get_node("/root/"+root+"/Goal")
+
 var on = false
 
 func _ready():

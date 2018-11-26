@@ -19,7 +19,7 @@ onready var scene = "res://Levels/" + get_tree().get_current_scene().name + ".ts
 
 
 var alive = true
-var movement_acceleration = Vector2()
+var movement_acceleration = get_floor_velocity()
 var jump_acceleration = Vector2()
 var velocity = Vector2()
 var jumped_last_frame = false
@@ -40,7 +40,11 @@ func _physics_process(delta):
 	jump()
 	wallslide()
 	walljump()
+	
+	
+	
 	var lenvelocity = velocity.length()
+	
 	velocity.y += GRAVITY * delta
 	velocity += movement_acceleration * delta
 	velocity += jump_acceleration * delta
