@@ -6,7 +6,7 @@
 [ext_resource path="res://ButtonExit.gd" type="Script" id=4]
 [ext_resource path="res://Music/08_Good_Bye_Prairie.ogg" type="AudioStream" id=5]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=1372]
 
 size = 50
 outline_size = 3
@@ -71,7 +71,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 1372 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -97,7 +97,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 1372 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -123,7 +123,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 1372 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
