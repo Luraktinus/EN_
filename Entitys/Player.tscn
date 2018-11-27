@@ -1,12 +1,13 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Entitys/Player.gd" type="Script" id=1]
 [ext_resource path="res://light.png" type="Texture" id=2]
 [ext_resource path="res://bttn_arrow.png" type="Texture" id=3]
 [ext_resource path="res://exit.png" type="Texture" id=4]
 [ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Sounds/player_die.wav" type="AudioStream" id=6]
 [ext_resource path="res://Sounds/jump.wav" type="AudioStream" id=7]
+
 
 [sub_resource type="CanvasItemMaterial" id=1]
 

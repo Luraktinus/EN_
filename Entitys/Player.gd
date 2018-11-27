@@ -4,7 +4,7 @@ extends KinematicBody2D
 
 const SPEED = 2000
 const AIR_SPEED = SPEED / 3
-const GRAVITY = 1500
+var GRAVITY = 1500
 const JUMP_FORCE = 4000
 const JUMP_FORCE_WALL = 20000
 const JUMP_REDUCTION_HOLD = 100

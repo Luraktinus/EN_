@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entitys/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileSetSimpleNav.tres" type="TileSet" id=2]
 [ext_resource path="res://block.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Enemies/Mine.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Goal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Switch.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Entitys/AntiGravityField.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entitys/Goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entitys/Switch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Music/01_Dreamstate.ogg" type="AudioStream" id=8]
 
@@ -62,7 +62,6 @@ position = Vector2( 640, -160 )
 z_index = 5
 
 [node name="TileMap" type="TileMap" parent="."]
-editor/display_folded = true
 scale = Vector2( 0.5, 0.5 )
 mode = 0
 tile_set = ExtResource( 2 )
@@ -83,7 +82,6 @@ format = 1
 tile_data = PoolIntArray( -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -327667, 0, 0, -327666, 0, 0, -327665, 0, 0, -327664, 0, 0, -327663, 0, 0, -327662, 0, 0, -327661, 0, 0, -327660, 0, 0, -262141, 0, 0, -262140, 1, 0, -262139, 1, 0, -262138, 1, 0, -262137, 1, 0, -262136, 1, 0, -262135, 1, 0, -262134, 1, 0, -262133, 1, 0, -262132, 1, 0, -262131, 1, 0, -262130, 1, 0, -262129, 1, 0, -262128, 1, 0, -262127, 1, 0, -262126, 1, 0, -262125, 1, 0, -262124, 0, 0, -196605, 0, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -196601, 1, 0, -196600, 1, 0, -196599, 1, 0, -196598, 1, 0, -196597, 1, 0, -196596, 1, 0, -196595, 1, 0, -196594, 1, 0, -196593, 1, 0, -196592, 1, 0, -196591, 1, 0, -196590, 1, 0, -196589, 1, 0, -196588, 0, 0, -131069, 0, 0, -131068, 1, 0, -131067, 1, 0, -131066, 1, 0, -131065, 1, 0, -131064, 1, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -131060, 1, 0, -131059, 1, 0, -131058, 1, 0, -131057, 1, 0, -131056, 1, 0, -131055, 1, 0, -131054, 1, 0, -131053, 1, 0, -131052, 0, 0, -65533, 0, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 0, 0, 3, 0, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 0, 0, 65539, 0, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0 )
 
 [node name="platform" parent="TileMap" instance=ExtResource( 3 )]
-editor/display_folded = true
 position = Vector2( 2112, 128 )
 scale = Vector2( 4, 1 )
 
@@ -96,11 +94,9 @@ playback_speed = 1.0
 anims/ANIM = SubResource( 1 )
 blend_times = [  ]
 
-[node name="Mine" parent="TileMap/platform" instance=ExtResource( 4 )]
-position = Vector2( -63.0375, 0 )
-
-[node name="Mine2" parent="TileMap/platform" instance=ExtResource( 4 )]
-position = Vector2( 64.9625, 0 )
+[node name="AntiGravityField" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1024, -64 )
+scale = Vector2( 1, 0.75 )
 
 [node name="Goal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1240, 80 )

@@ -3,8 +3,8 @@
 [ext_resource path="res://TileSetSimpleNav_2.0.tres" type="TileSet" id=1]
 [ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Mine.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Goal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entitys/Goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entitys/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Music/07_Freefall.ogg" type="AudioStream" id=6]
 
 [sub_resource type="NavigationPolygon" id=1]
