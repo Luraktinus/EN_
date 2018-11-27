@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://ButtonPlay.gd" type="Script" id=2]
-[ext_resource path="res://ButtonHelp.gd" type="Script" id=3]
-[ext_resource path="res://ButtonExit.gd" type="Script" id=4]
+[ext_resource path="res://Menu/ButtonPlay.gd" type="Script" id=2]
+[ext_resource path="res://Menu/ButtonHelp.gd" type="Script" id=3]
+[ext_resource path="res://Menu/ButtonExit.gd" type="Script" id=4]
 [ext_resource path="res://Music/08_Good_Bye_Prairie.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]

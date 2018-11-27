@@ -17,7 +17,7 @@ const WALL_FRICTION = 0.8
 onready var scene = "res://Levels/" + get_tree().get_current_scene().name + ".tscn"
 
 
-
+var lenvelocity = 0
 var alive = true
 var movement_acceleration = get_floor_velocity()
 var jump_acceleration = Vector2()
@@ -43,7 +43,9 @@ func _physics_process(delta):
 	
 	
 	
-	var lenvelocity = velocity.length()
+	lenvelocity = velocity.length()
+	
+	update()
 	
 	velocity.y += GRAVITY * delta
 	velocity += movement_acceleration * delta
@@ -154,11 +156,20 @@ func walljump():
 		jumped_last_frame = false
 
 
+
+func _draw():
+	print(lenvelocity)
+	if lenvelocity > 1500:
+		draw_circle( Vector2(0,0), 50, Color(1,0,0,0.5) )
+		
+		pass
+	
+	
 #--- ESC exits
 func _input(event):
 	if event is InputEventKey and event.is_pressed():
 		if event.get_scancode() == KEY_ESCAPE:
-			get_tree().change_scene("res://Menu.tscn")
+			get_tree().change_scene("res://Menu/Menu.tscn")
 
 
 func _on_DeathTimer_timeout():
@@ -172,3 +183,14 @@ func death():
 	alive = false
 	$DeathSign.visible = true
 	$Sprite.visible = false
+	GRAVITY = 0
+	$CollisionShape2D1.disabled = true
+	$CollisionShape2D2.disabled = true
+	$CollisionShape2D3.disabled = true
+	velocity = Vector2(0,0)
+	movement_acceleration = Vector2(0,0)
+	jump_acceleration = Vector2(0,0)
+
+
+func _on_WallCast_body_entered(body):
+	death()

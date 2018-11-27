@@ -104,7 +104,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -7, -191.25 )
+graph_offset = Vector2( 97, 41 )
 mode = 1
 modes/blend = 0
 flags/light_only = false
@@ -147,6 +147,7 @@ extents = Vector2( 256, 256 )
 material = SubResource( 10 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+antigravity = 0
 
 [node name="Area2D" type="Area2D" parent="."]
 input_pickable = true
