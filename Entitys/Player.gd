@@ -158,7 +158,6 @@ func walljump():
 
 
 func _draw():
-	print(lenvelocity)
 	if lenvelocity > 1500:
 		draw_circle( Vector2(0,0), 50, Color(1,0,0,0.5) )
 		
@@ -176,7 +175,6 @@ func _on_DeathTimer_timeout():
 	get_tree().change_scene(scene)
 	
 func death():
-	print("Death")
 	if alive:
 		$DeathTimer.start()
 		$Audio/player_die.play()
