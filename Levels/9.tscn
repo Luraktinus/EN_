@@ -1,0 +1,162 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://TileSetSimpleNav_2.0.tres" type="TileSet" id=1]
+[ext_resource path="res://Entitys/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entitys/platform.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Rotation Clockwise"
+length = 4.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 90.0, 180.0, 270.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Rotation Clockwise"
+length = 4.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0, 180.0, 270.0, 360.0, 450.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Rotation Clockwise"
+length = 4.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 90.0, 180.0, 270.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "Rotation Clockwise"
+length = 4.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0, 180.0, 270.0, 360.0, 450.0 ]
+}
+
+[node name="9" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 1114107, 3, 0, 1179643, 11, 0, 1245180, 3, 0, 1310716, 11, 0, 1376253, 3, 0, 1441789, 11, 0, 1507326, 3, 0, 1572862, 11, 0, 1638399, 3, 0, 1703935, 11, 0, 1703936, 3, 0, 1769472, 11, 0, 1835009, 3, 0, 1900545, 11, 0, 1966082, 3, 0, 2031618, 11, 0, 2097155, 3, 0, 2162691, 11, 0, 2228228, 3, 0, 2293764, 11, 0, 2359301, 3, 0, 2424837, 0, 0, 2424838, 0, 0, 2424839, 0, 0, 2424840, 0, 0, 2424841, 0, 0, 2424842, 0, 0, 2424843, 0, 0, 2424844, 0, 0, 2424845, 0, 0, 2424846, 0, 0, 2424847, 0, 0, 2424848, 0, 0, 2424849, 0, 0, 2424850, 0, 0, 2424851, 0, 0, 2424852, 0, 0, 2424853, 0, 0, 2424854, 0, 0, 2424855, 0, 0, 2424856, 0, 0, 2424857, 0, 0, 2424858, 0, 0, 2424859, 0, 0, 2424860, 0, 0, 2424861, 0, 0, 2424862, 0, 0, 2424863, 0, 0, 2424864, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1002.38, 4608.37 )
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Block" parent="Platforms" instance=ExtResource( 3 )]
+position = Vector2( 1280, 4416 )
+scale = Vector2( 3, 0.5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Block"]
+root_node = NodePath("..")
+autoplay = "Rotation Clockwise"
+playback_process_mode = 1
+playback_default_blend_time = 1.0
+playback_speed = 0.5
+"anims/Rotation Clockwise" = SubResource( 1 )
+blend_times = [  ]
+
+[node name="Block2" parent="Platforms" instance=ExtResource( 3 )]
+position = Vector2( 1472, 4416 )
+rotation = 3.14159
+scale = Vector2( 3, 0.5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Block2"]
+root_node = NodePath("..")
+autoplay = "Rotation Clockwise"
+playback_process_mode = 1
+playback_default_blend_time = 1.0
+playback_speed = 0.5
+"anims/Rotation Clockwise" = SubResource( 2 )
+blend_times = [  ]
+
+[node name="Block3" parent="Platforms" instance=ExtResource( 3 )]
+position = Vector2( 1664, 4416 )
+scale = Vector2( 3, 0.5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Block3"]
+root_node = NodePath("..")
+autoplay = "Rotation Clockwise"
+playback_process_mode = 1
+playback_default_blend_time = 1.0
+playback_speed = 0.5
+"anims/Rotation Clockwise" = SubResource( 3 )
+blend_times = [  ]
+
+[node name="Block4" parent="Platforms" instance=ExtResource( 3 )]
+position = Vector2( 1856, 4416 )
+rotation = 3.14159
+scale = Vector2( 3, 0.5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Block4"]
+root_node = NodePath("..")
+autoplay = "Rotation Clockwise"
+playback_process_mode = 1
+playback_default_blend_time = 1.0
+playback_speed = 0.5
+"anims/Rotation Clockwise" = SubResource( 4 )
+blend_times = [  ]
+

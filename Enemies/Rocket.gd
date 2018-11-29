@@ -5,19 +5,17 @@ onready var player = get_node("/root/"+root+"/Player")
 
 signal exploded
 
-const SPEED = Vector2(1400, 0)
+const SPEED = Vector2(1800, 0)
 const ROTATION_SPEED = 0.04
 
 var rotation_movement = 0
 var movement = Vector2()
 var velocity = Vector2()
 
-const CD_CALC_PATH = 300
-var cd_calc_path = CD_CALC_PATH + randi() % 60
 
 func _ready():
 	rotation = position.angle_to(player.position)
-	
+
 
 func _physics_process(delta):
 	goto(player.position)
@@ -45,5 +43,10 @@ func goto(goal):
 
 
 func wall_collision():
-	queue_free()
+	$AudioExplode.play()
+	visible = false
+	$DeathTimer.start()
 	emit_signal("exploded")
+
+func _on_DeathTimer_timeout():
+	queue_free()

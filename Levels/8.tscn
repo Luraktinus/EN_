@@ -85,7 +85,7 @@ tile_data = PoolIntArray( -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 
 position = Vector2( 2112, 128 )
 scale = Vector2( 4, 1 )
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="TileMap/platform"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TileMap/platform"]
 root_node = NodePath("..")
 autoplay = "ANIM"
 playback_process_mode = 1

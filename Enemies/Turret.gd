@@ -42,4 +42,3 @@ func shoot():
 
 func rocket_exploded():
 	rocket_count -= 1
-	$AudioExploded.play()
