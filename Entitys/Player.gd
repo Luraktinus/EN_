@@ -14,6 +14,9 @@ const FRICTION_FLOOR = 0.89
 const FLOORSLIDE = 20
 const WALL_FRICTION = 0.8
 
+var enable_crush_damage = false
+var enable_fall_damage = false
+
 onready var scene = "res://Levels/" + get_tree().get_current_scene().name + ".tscn"
 
 
@@ -53,8 +56,9 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	if lenvelocity/(delta+0.0000000001)/60 > velocity.length()/(delta+0.0000000001)/60 + 1500: # 12 blocks dead
-		death()
+	if enable_fall_damage:
+		if lenvelocity/(delta+0.0000000001)/60 > velocity.length()/(delta+0.0000000001)/60 + 1500: # 12 blocks dead
+			death()
 
 
 func animation():
@@ -191,4 +195,5 @@ func death():
 
 
 func _on_WallCast_body_entered(body):
-	death()
+	if enable_crush_damage:
+		death()

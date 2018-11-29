@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://TileSetSimpleNav_2.0.tres" type="TileSet" id=1]
 [ext_resource path="res://Entitys/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Entitys/platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://off.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -111,6 +112,18 @@ func _on_Tween_tween_completed(object, key):
 	
 "
 
+[sub_resource type="CircleShape2D" id=6]
+
+custom_solver_bias = 0.0
+radius = 8.43483
+
+[sub_resource type="PhysicsMaterial" id=7]
+
+friction = 1.0
+rough = true
+bounce = 0.0
+absorbent = true
+
 [node name="9" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -136,9 +149,11 @@ tile_data = PoolIntArray( 1114107, 3, 0, 1179643, 11, 0, 1245180, 3, 0, 1310716,
 position = Vector2( 943.653, 4212.74 )
 
 [node name="Platforms" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Block" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 1221.27, 4020.37 )
+editor/display_folded = true
+position = Vector2( 1442, 3932 )
 scale = Vector2( 3, 0.5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Block"]
@@ -151,7 +166,8 @@ playback_speed = 0.5
 blend_times = [  ]
 
 [node name="Block2" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 1413.27, 4020.37 )
+editor/display_folded = true
+position = Vector2( 1634, 3932 )
 rotation = 3.14159
 scale = Vector2( 3, 0.5 )
 
@@ -165,7 +181,8 @@ playback_speed = 0.5
 blend_times = [  ]
 
 [node name="Block3" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 1605.27, 4020.37 )
+editor/display_folded = true
+position = Vector2( 1826, 3932 )
 scale = Vector2( 3, 0.5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Block3"]
@@ -178,7 +195,8 @@ playback_speed = 0.5
 blend_times = [  ]
 
 [node name="Block4" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 1797.27, 4020.37 )
+editor/display_folded = true
+position = Vector2( 2018, 3932 )
 rotation = 3.14159
 scale = Vector2( 3, 0.5 )
 
@@ -192,6 +210,7 @@ playback_speed = 0.5
 blend_times = [  ]
 
 [node name="Block5" parent="Platforms" instance=ExtResource( 3 )]
+editor/display_folded = true
 position = Vector2( 2743.96, 4578.72 )
 
 [node name="Tween" type="Tween" parent="Platforms/Block5"]
@@ -202,5 +221,79 @@ playback/active = false
 playback/repeat = true
 playback/speed = 1.0
 script = SubResource( 5 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2( 2104, 4224 )
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../RigidBody2D")
+bias = 0.0
+disable_collision = true
+softness = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 2104, 4224 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 2104, 4528 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 0.15
+physics_material_override = SubResource( 7 )
+gravity_scale = 9.81
+custom_integrator = false
+continuous_cd = 2
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = false
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
+position = Vector2( 0.800049, -304 )
+polygon = PoolVector2Array( 8, -8, -8, -8, -8, 456, -128, 456, -128, 472, 8, 472 )
+uv = PoolVector2Array(  )
+splits = PoolIntArray(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+skeleton = NodePath("")
+invert_enable = false
+invert_border = 100.0
+bones = [  ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2( 0.800049, -304 )
+build_mode = 0
+polygon = PoolVector2Array( 8, -8, -8, -8, -8, 456, -128, 456, -128, 472, 8, 472 )
 
 [connection signal="tween_completed" from="Platforms/Block5/Tween" to="Platforms/Block5/Tween" method="_on_Tween_tween_completed"]
