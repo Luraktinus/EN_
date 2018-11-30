@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://TileSetSimpleNav_2.0.tres" type="TileSet" id=1]
 [ext_resource path="res://Entitys/Player.tscn" type="PackedScene" id=2]
@@ -116,13 +116,6 @@ func _on_Tween_tween_completed(object, key):
 
 custom_solver_bias = 0.0
 radius = 8.43483
-
-[sub_resource type="PhysicsMaterial" id=7]
-
-friction = 1.0
-rough = true
-bounce = 0.0
-absorbent = true
 
 [node name="9" type="Node2D"]
 
@@ -250,25 +243,23 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 4 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 2104, 4528 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 0.15
-physics_material_override = SubResource( 7 )
+mass = 1.0
 gravity_scale = 9.81
 custom_integrator = false
-continuous_cd = 2
+continuous_cd = 0
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
-can_sleep = false
+can_sleep = true
 linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
+linear_damp = 0.0
 angular_velocity = 0.0
-angular_damp = -1.0
+angular_damp = 0.0
 __meta__ = {
 "_edit_group_": true
 }
