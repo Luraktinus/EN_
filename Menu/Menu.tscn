@@ -1,19 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Menu/ButtonPlay.gd" type="Script" id=2]
-[ext_resource path="res://Menu/ButtonHelp.gd" type="Script" id=3]
-[ext_resource path="res://Menu/ButtonExit.gd" type="Script" id=4]
-[ext_resource path="res://Music/08_Good_Bye_Prairie.ogg" type="AudioStream" id=5]
-
-[sub_resource type="DynamicFont" id=1]
-
-size = 50
-outline_size = 3
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 1 )
+[ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Music/08_Good_Bye_Prairie.ogg" type="AudioStream" id=2]
+[ext_resource path="res://bg.png" type="Texture" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Menu/PlayButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menu/HelpButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Menu/ExitButton.tscn" type="PackedScene" id=7]
 
 [node name="Menu" type="Control"]
 anchor_left = 0.0
@@ -26,115 +19,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-
-[node name="Panel" type="Panel" parent="."]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 200.0
-margin_top = 180.0
-margin_right = -200.0
-margin_bottom = -180.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 1
-
-[node name="ButtonPlay" type="Button" parent="VBoxContainer"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 624.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 0, 100 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Play"
-flat = false
-align = 1
-script = ExtResource( 2 )
-
-[node name="ButtonHelp" type="Button" parent="VBoxContainer"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 108.0
-margin_right = 624.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 0, 100 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Help"
-flat = false
-align = 1
-script = ExtResource( 3 )
-
-[node name="ButtonExit" type="Button" parent="VBoxContainer"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 216.0
-margin_right = 624.0
-margin_bottom = 316.0
-rect_min_size = Vector2( 0, 100 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Exit"
-flat = false
-align = 1
-script = ExtResource( 4 )
+script = ExtResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 2 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -142,6 +30,81 @@ stream_paused = false
 mix_target = 0
 bus = "Master"
 
-[connection signal="pressed" from="VBoxContainer/ButtonPlay" to="VBoxContainer/ButtonPlay" method="_on_ButtonPlay_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonHelp" to="VBoxContainer/ButtonHelp" method="_on_ButtonHelp_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonExit" to="VBoxContainer/ButtonExit" method="_on_ButtonExit_pressed"]
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color( 0.2, 0.2, 0.2, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 212.0
+margin_top = 163.0
+margin_right = 812.0
+margin_bottom = 437.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 20
+alignment = 0
+
+[node name="Icon" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 600.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 0
+
+[node name="PlayButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 84.0
+margin_bottom = 134.0
+
+[node name="HelpButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 154.0
+margin_bottom = 204.0
+
+[node name="ExitButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 224.0
+margin_bottom = 274.0
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
