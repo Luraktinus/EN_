@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Music/08_Good_Bye_Prairie.ogg" type="AudioStream" id=2]
-[ext_resource path="res://bg.png" type="Texture" id=3]
+[ext_resource path="res://Menu/MenuBackground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://Menu/PlayButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Menu/HelpButton.tscn" type="PackedScene" id=6]
@@ -30,21 +30,7 @@ stream_paused = false
 mix_target = 0
 bus = "Master"
 
-[node name="Background" type="TextureRect" parent="."]
-self_modulate = Color( 0.2, 0.2, 0.2, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 3 )
-expand = true
-stretch_mode = 0
+[node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_left = 0.0
@@ -68,6 +54,8 @@ margin_left = 212.0
 margin_top = 163.0
 margin_right = 812.0
 margin_bottom = 437.0
+grow_horizontal = 0
+grow_vertical = 0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
