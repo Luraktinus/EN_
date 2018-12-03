@@ -1216,6 +1216,7 @@ navpoly = SubResource( 59 )
 enabled = true
 
 [node name="bg_for_areas" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 512, 0 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -1226,4 +1227,27 @@ __meta__ = {
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="bg_for_areas"]
 navpoly = SubResource( 60 )
 enabled = true
+
+[node name="blocknogrip" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 768, 0 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="blocknogrip"]
+input_pickable = false
+collision_layer = 16
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocknogrip/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="blocknogrip"]
+occluder = SubResource( 2 )
+light_mask = 1
 

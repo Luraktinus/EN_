@@ -78,6 +78,7 @@ ui_up={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Mine"
+2d_physics/layer_5="WallNogrip"
 2d_physics/layer_10="Goal"
 
 [rendering]
