@@ -48,7 +48,7 @@ func _physics_process(delta):
 	
 	lenvelocity = velocity.length()
 	
-	update()
+	
 	
 	velocity.y += GRAVITY * delta
 	velocity += movement_acceleration * delta
@@ -161,11 +161,11 @@ func walljump():
 
 
 
-func _draw():
-	if lenvelocity > 1500:
-		draw_circle( Vector2(0,0), 50, Color(1,0,0,0.5) )
-		
-		pass
+#func _draw():
+#	if lenvelocity > 1500:
+#		draw_circle( Vector2(0,0), 50, Color(1,0,0,0.5) )
+#
+#		pass
 	
 	
 #--- ESC exits

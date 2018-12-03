@@ -1,8 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Menu/LevelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Menu/MenuBackground.tscn" type="PackedScene" id=2]
-[ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Levels/1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends Viewport
+
+
+func _ready():
+	get_tree().paused = true"
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -11,7 +20,7 @@ outline_size = 1
 outline_color = Color( 1, 1, 1, 1 )
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="GDScript" id=2]
 
@@ -24,6 +33,7 @@ func _on_Button_pressed():
 "
 
 [node name="LevelMenu" type="Control"]
+pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -38,27 +48,61 @@ script = ExtResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.65
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 60.0
-margin_top = 60.0
-margin_bottom = -60.0
+margin_bottom = -126.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 156.0
+margin_top = 77.0
+margin_right = 1764.0
+margin_bottom = 877.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/HBoxContainer"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 600.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 600, 800 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-scroll_horizontal_enabled = true
+scroll_horizontal_enabled = false
 scroll_horizontal = 0
 scroll_vertical_enabled = true
 scroll_vertical = 0
 scroll_deadzone = 0
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/HBoxContainer/ScrollContainer" groups=[
+"buttoncontainer",
+]]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -71,12 +115,65 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 5
 
+[node name="ViewportContainer" type="ViewportContainer" parent="CenterContainer/HBoxContainer"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 608.0
+margin_right = 1608.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 1000, 800 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch = false
+stretch_shrink = 1
+
+[node name="Viewport" type="Viewport" parent="CenterContainer/HBoxContainer/ViewportContainer" groups=[
+"levelpreview",
+]]
+arvr = false
+size = Vector2( 1000, 800 )
+own_world = false
+world = null
+transparent_bg = true
+msaa = 0
+hdr = true
+disable_3d = false
+keep_3d_linear = false
+usage = 0
+debug_draw = 0
+render_target_v_flip = false
+render_target_clear_mode = 0
+render_target_update_mode = 3
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = true
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+script = SubResource( 3 )
+
+[node name="1" parent="CenterContainer/HBoxContainer/ViewportContainer/Viewport" instance=ExtResource( 3 )]
+pause_mode = 1
+
 [node name="Button" type="Button" parent="."]
 anchor_left = 0.0
-anchor_top = 0.9
+anchor_top = 0.0
 anchor_right = 0.0
-anchor_bottom = 1.0
-margin_right = 90.0
+anchor_bottom = 0.0
+margin_left = 9.0
+margin_top = 990.0
+margin_right = 99.0
+margin_bottom = 1068.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

@@ -9,6 +9,7 @@
 [ext_resource path="res://Menu/ExitButton.tscn" type="PackedScene" id=7]
 
 [node name="Menu" type="Control"]
+pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -50,10 +51,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 212.0
-margin_top = 142.0
-margin_right = 812.0
-margin_bottom = 458.0
+margin_left = 660.0
+margin_top = 230.0
+margin_right = 1260.0
+margin_bottom = 850.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -71,7 +72,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 600.0
-margin_bottom = 64.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -79,19 +81,19 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 4 )
-stretch_mode = 0
+stretch_mode = 5
 
 [node name="PlayButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 84.0
-margin_bottom = 148.0
+margin_top = 220.0
+margin_bottom = 340.0
 
 [node name="HelpButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 168.0
-margin_bottom = 232.0
+margin_top = 360.0
+margin_bottom = 480.0
 
 [node name="ExitButton" parent="CenterContainer/VBoxContainer" instance=ExtResource( 7 )]
-margin_top = 252.0
-margin_bottom = 316.0
+margin_top = 500.0
+margin_bottom = 620.0
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HelpButton" to="." method="_on_HelpButton_pressed"]

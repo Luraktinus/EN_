@@ -7,6 +7,7 @@ var button_res = load("res://Menu/LevelButton.tscn")
 var lvl_reached = 1
 	
 func _ready():
+	
 	if not file.file_exists(save_path):
 		create_save()
 	else:
@@ -20,10 +21,10 @@ func _ready():
 		button.level = i
 		if i > lvl_reached:
 			button.disabled = true
-			button.set_font("res://Menu/MenuFont30.tres")
-		else:
 			button.set_font("res://Menu/MenuFont50.tres")
-		$ScrollContainer/GridContainer.add_child(button)
+		else:
+			button.set_font("res://Menu/MenuFont100.tres")
+		get_tree().get_nodes_in_group("buttoncontainer")[0].add_child(button)
 		
 
 func create_save():
@@ -38,3 +39,7 @@ func read_savegame():
 	file.close() #close the file
 	return save_data["level"] #return the value
 
+func _input(event):
+	if event is InputEventKey and event.is_pressed():
+		if event.get_scancode() == KEY_ESCAPE:
+			get_tree().change_scene("res://Menu/Menu.tscn")
