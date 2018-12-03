@@ -1,27 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Menu/BackButton.tscn" type="PackedScene" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 37
-outline_size = 1
-outline_color = Color( 1, 1, 1, 1 )
-use_mipmaps = false
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="GDScript" id=2]
-
-script/source = "extends Button
-
-func _on_Button_pressed():
-	get_tree().change_scene(\"res://Menu/Menu.tscn\")
-"
-
-[sub_resource type="DynamicFont" id=3]
-
-size = 20
+size = 40
 outline_size = 1
 outline_color = Color( 1, 1, 1, 1 )
 use_mipmaps = false
@@ -53,41 +37,22 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Button" type="Button" parent="Panel"]
-anchor_left = 0.0
-anchor_top = 0.9
-anchor_right = 0.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "BACK"
-flat = false
-align = 1
-script = SubResource( 2 )
-
 [node name="TextEdit" type="RichTextLabel" parent="Panel"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -88.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -794.0
+margin_top = -430.5
+margin_right = 794.0
+margin_bottom = 430.5
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -113,4 +78,11 @@ scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
 
-[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_Button_pressed"]
+[node name="BackButton" parent="." instance=ExtResource( 2 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = -120.0
+margin_right = 630.0
+margin_bottom = 0.0
+

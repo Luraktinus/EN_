@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Entitys/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entitys/Goal.tscn" type="PackedScene" id=2]
@@ -8,14 +8,7 @@
 [ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Music/02_Theta.ogg" type="AudioStream" id=7]
 
-
-[sub_resource type="NavigationPolygon" id=1]
-
-vertices = PoolVector2Array( 1280, 128, 256, 128, 256, -256, 1280, -256 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-outlines = [ PoolVector2Array( 1280, -256, 256, -256, 256, 128, 1280, 128 ) ]
-
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 size = 32
 outline_size = 1
@@ -25,6 +18,7 @@ use_filter = true
 font_data = ExtResource( 6 )
 
 [node name="2" type="Node2D"]
+position = Vector2( -192, 320 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 768, 64 )
@@ -81,14 +75,6 @@ position = Vector2( 1184, 992 )
 [node name="Switch7" parent="Switches" instance=ExtResource( 5 )]
 position = Vector2( 1152, 832 )
 
-[node name="Navigation2D" type="Navigation2D" parent="."]
-editor/display_folded = true
-visible = false
-
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-navpoly = SubResource( 1 )
-enabled = true
-
 [node name="Control" type="Control" parent="."]
 anchor_left = 0.0
 anchor_top = 0.0
@@ -118,7 +104,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "RED are the ENEMIES, 
 DONT TOUCH THEM"
 percent_visible = 1.0
@@ -140,7 +126,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "If you fall to FAST, you DIE.
 Press to the WALL to SLOW DOWN."
 percent_visible = 1.0

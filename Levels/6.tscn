@@ -9,7 +9,6 @@
 [ext_resource path="res://NotoSans-Thin.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Music/06_Triton.ogg" type="AudioStream" id=8]
 
-
 [sub_resource type="NavigationPolygon" id=1]
 
 vertices = PoolVector2Array( 1280, 128, 256, 128, 256, -256, 1280, -256 )
@@ -26,6 +25,7 @@ use_filter = true
 font_data = ExtResource( 7 )
 
 [node name="6" type="Node2D"]
+position = Vector2( -1144, -32 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 576, 64 )

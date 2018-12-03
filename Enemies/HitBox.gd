@@ -7,6 +7,5 @@ func _ready():
 	print(player)
 
 func _on_HitBox_body_entered(body):
-	
 	player.death()
 

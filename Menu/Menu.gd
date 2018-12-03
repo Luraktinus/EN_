@@ -2,6 +2,9 @@ extends Control
 
 
 
+func _ready():
+	get_tree().paused = true
+
 
 func _input(event):
 	if event is InputEventKey and event.is_pressed():

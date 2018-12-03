@@ -2,8 +2,7 @@ extends Node2D
  
 var rocket_res = load("res://Enemies/Rocket.tscn")
 
-onready var root = str(get_tree().get_current_scene().name)
-onready var player = get_node("/root/"+root+"/Player")
+onready var player = get_tree().get_nodes_in_group("Player")[0]
 
 onready var ray = $Ray
 export var max_rockets = 2

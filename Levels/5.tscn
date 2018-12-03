@@ -20,6 +20,7 @@ use_filter = true
 font_data = ExtResource( 7 )
 
 [node name="5" type="Node2D"]
+position = Vector2( -4136.41, 188.391 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -84,8 +85,6 @@ position = Vector2( 5376, 704 )
 
 [node name="Switch3" parent="Switches" instance=ExtResource( 6 )]
 position = Vector2( 3968, 400 )
-
-[node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.0
