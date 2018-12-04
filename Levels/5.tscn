@@ -117,6 +117,6 @@ mix_target = 0
 bus = "Master"
 
 [node name="AntiGravityField" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1405, 1263.5 )
-scale = Vector2( 1.73828, 2.64258 )
+position = Vector2( 1274.58, 1239.05 )
+scale = Vector2( 1.73828, 2.95037 )
 

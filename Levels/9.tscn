@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://TileSetSimpleNav_3.0.tres" type="TileSet" id=1]
 [ext_resource path="res://Entitys/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Entitys/platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://off.png" type="Texture" id=4]
 [ext_resource path="res://Enemies/GroundEnemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entitys/Goal.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 
@@ -307,5 +308,8 @@ polygon = PoolVector2Array( 8, -8, -8, -8, -8, 456, -128, 456, -128, 472, 8, 472
 
 [node name="GroundEnemy" parent="." instance=ExtResource( 5 )]
 position = Vector2( 5688, 4616 )
+
+[node name="Goal" parent="." instance=ExtResource( 6 )]
+position = Vector2( 22172.5, 4662.94 )
 
 [connection signal="tween_completed" from="Platforms/Block5/Tween" to="Platforms/Block5/Tween" method="_on_Tween_tween_completed"]
