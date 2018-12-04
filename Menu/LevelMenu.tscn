@@ -15,6 +15,7 @@ func _ready():
 	scn = scn.instance()
 	scn.pause_mode = PAUSE_MODE_STOP
 	add_child(scn)
+	
 
 
 func change_scene(scene):
@@ -22,7 +23,9 @@ func change_scene(scene):
 	var scn = load(scene)
 	scn = scn.instance()
 	scn.pause_mode = PAUSE_MODE_STOP
-	add_child(scn)"
+#	get_tree().get_nodes_in_group(\"Preview\")[0].current = true
+	add_child(scn)
+	"
 
 [node name="LevelMenu" type="Control"]
 pause_mode = 2
@@ -40,46 +43,29 @@ script = ExtResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Container" type="Container" parent="."]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -126.0
+margin_bottom = -130.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-use_top_left = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Container"]
+pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 156.0
-margin_top = 77.0
-margin_right = 1764.0
-margin_bottom = 877.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/HBoxContainer"]
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 600.0
-margin_bottom = 800.0
-rect_min_size = Vector2( 600, 800 )
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 880.0
+margin_bottom = -80.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -92,7 +78,7 @@ scroll_vertical_enabled = true
 scroll_vertical = 0
 scroll_deadzone = 0
 
-[node name="GridContainer" type="GridContainer" parent="CenterContainer/HBoxContainer/ScrollContainer" groups=[
+[node name="GridContainer" type="GridContainer" parent="Container/ScrollContainer" groups=[
 "buttoncontainer",
 ]]
 anchor_left = 0.0
@@ -107,14 +93,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 5
 
-[node name="ViewportContainer" type="ViewportContainer" parent="CenterContainer/HBoxContainer"]
-anchor_left = 0.0
+[node name="ViewportContainer" type="ViewportContainer" parent="Container"]
+anchor_left = 0.5
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 608.0
-margin_right = 1608.0
-margin_bottom = 800.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 80.0
+margin_top = 80.0
+margin_right = -80.0
+margin_bottom = -80.0
 rect_min_size = Vector2( 1000, 800 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -122,15 +109,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-stretch = false
+stretch = true
 stretch_shrink = 1
 
-[node name="Viewport" type="Viewport" parent="CenterContainer/HBoxContainer/ViewportContainer" groups=[
+[node name="Viewport" type="Viewport" parent="Container/ViewportContainer" groups=[
 "levelpreview",
 ]]
 arvr = false
-size = Vector2( 1000, 800 )
-own_world = false
+size = Vector2( 500, 500 )
+own_world = true
 world = null
 transparent_bg = true
 msaa = 0
