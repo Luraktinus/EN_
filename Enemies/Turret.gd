@@ -5,7 +5,7 @@ var rocket_res = load("res://Enemies/Rocket.tscn")
 onready var player = get_tree().get_nodes_in_group("Player")[0]
 
 onready var ray = $Ray
-export var max_rockets = 2
+export var max_rockets = 1
 var rocket_count = 0
 export var cooldown = 120
 var cd = cooldown

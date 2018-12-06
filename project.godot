@@ -29,6 +29,7 @@ window/size/height=1080
 window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+window/stretch/shrink=1.0
 
 [gui]
 

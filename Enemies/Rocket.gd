@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
-onready var root = str(get_tree().get_current_scene().name)
-onready var player = get_node("/root/"+root+"/Player")
+onready var player = get_tree().get_nodes_in_group("Player")[0]
 
 signal exploded
 
@@ -14,7 +13,9 @@ var velocity = Vector2()
 
 
 func _ready():
-	rotation = position.angle_to(player.position)
+	var before =  rotation
+	var vec = player.position - position
+	rotation = atan2(vec.y, vec.x)
 
 
 func _physics_process(delta):
