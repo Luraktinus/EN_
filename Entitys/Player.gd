@@ -22,7 +22,7 @@ onready var scene = "res://Levels/" + get_tree().get_current_scene().name + ".ts
 
 var lenvelocity = 0
 var alive = true
-var movement_acceleration = get_floor_velocity()
+var movement_acceleration = Vector2()
 var jump_acceleration = Vector2()
 var velocity = Vector2()
 var jumped_last_frame = false
@@ -44,11 +44,7 @@ func _physics_process(delta):
 	wallslide()
 	walljump()
 	
-	
-	
 	lenvelocity = velocity.length()
-	
-	
 	
 	velocity.y += GRAVITY * delta
 	velocity += movement_acceleration * delta
@@ -160,15 +156,6 @@ func walljump():
 		jumped_last_frame = false
 
 
-
-#func _draw():
-#	if lenvelocity > 1500:
-#		draw_circle( Vector2(0,0), 50, Color(1,0,0,0.5) )
-#
-#		pass
-	
-	
-#--- ESC exits
 func _input(event):
 	if event is InputEventKey and event.is_pressed():
 		if event.get_scancode() == KEY_ESCAPE:
@@ -177,7 +164,8 @@ func _input(event):
 
 func _on_DeathTimer_timeout():
 	get_tree().change_scene(scene)
-	
+
+
 func death():
 	if alive:
 		$DeathTimer.start()
@@ -197,3 +185,4 @@ func death():
 func _on_WallCast_body_entered(body):
 	if enable_crush_damage:
 		death()
+

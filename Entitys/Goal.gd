@@ -3,7 +3,7 @@ extends Area2D
 onready var scene = "res://Levels/" + str(int(get_tree().get_current_scene().name) + 1) + ".tscn"
 
 onready var root = str(get_tree().get_current_scene().name)
-onready var player = $"../Player"
+onready var player = get_tree().get_nodes_in_group("Player")[0]
 
 
 

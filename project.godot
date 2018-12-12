@@ -84,6 +84,8 @@ ui_up={
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Mine"
 2d_physics/layer_5="WallNogrip"
+2d_physics/layer_7="Always Active"
+2d_physics/layer_8="Portal"
 2d_physics/layer_10="Goal"
 
 [rendering]

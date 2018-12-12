@@ -23,7 +23,7 @@ func change_scene(scene):
 	scn.pause_mode = PAUSE_MODE_STOP
 #	get_tree().get_nodes_in_group(\"Preview\")[0].current = true
 	add_child(scn)
-	scn.get_node(\"Player/Camera2D\").current = true
+	get_tree().get_nodes_in_group(\"Player\")[0].get_node(\"Camera2D\").current = true
 #	scn.get_node(\"Camera2D\").make_current()
 	"
 
